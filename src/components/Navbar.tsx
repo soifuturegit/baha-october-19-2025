@@ -57,10 +57,12 @@ export default function Navbar() {
           <div className="px-3 space-y-1">
             {navItems.map((item) => {
               const Icon = item.icon;
-              const isActive = item.href.startsWith('#') 
-                ? activeSection === item.href.slice(1)
-                : location.pathname === item.href;
-              
+              const isActive = item.href === '/'
+                ? location.pathname === '/' && !activeSection
+                : item.href.startsWith('#')
+                  ? activeSection === item.href.slice(1)
+                  : location.pathname === item.href;
+
               const NavLink = item.href.startsWith('#') ? 'a' : Link;
               
               return (
