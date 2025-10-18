@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { companies } from '../data/companies';
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Companies() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -82,39 +82,22 @@ export default function Companies() {
             {companies.map((company) => (
               <div
                 key={company.id}
-                className="group bg-slate-900/50 rounded-xl border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300 w-64 flex-shrink-0"
+                className="group bg-slate-900/50 rounded-xl border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300 w-72 flex-shrink-0 overflow-hidden"
               >
-                <div className="p-6">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-24 h-24 rounded-2xl bg-white/10 flex items-center justify-center p-4 group-hover:bg-white/15 transition-all duration-300">
-                      <img
-                        src={company.logo}
-                        alt={`${company.name} logo`}
-                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
+                <div className="p-6 flex flex-col items-center">
+                  <div className="w-full h-48 rounded-xl bg-white/5 flex items-center justify-center p-6 mb-4 group-hover:bg-white/10 transition-all duration-300">
+                    <img
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
                   </div>
 
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-white mb-2">{company.name}</h3>
-                    {company.role && (
-                      <p className="text-sm text-slate-400 mb-1">{company.role}</p>
-                    )}
-                    {company.period && (
-                      <p className="text-xs text-slate-500 mb-3">{company.period}</p>
-                    )}
-                    {company.url && (
-                      <a
-                        href={company.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm transition-colors"
-                      >
-                        Visit Site
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
+                  {company.role && (
+                    <p className="text-base text-slate-300 text-center font-medium">
+                      {company.role}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
