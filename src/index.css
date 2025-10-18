@@ -321,4 +321,9 @@
   .light .bg-red-500\/10 {
     @apply bg-red-100 text-red-700;
   }
+
+  /* Shadow Gradients for Light Mode */
+  .light [class*="from-slate-800"] {
+    --tw-gradient-from: rgb(255 255 255 / 0.8) var(--tw-gradient-from-position);
+  }
 }

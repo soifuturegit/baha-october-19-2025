@@ -111,12 +111,12 @@ export default function Projects() {
       {/* Category Filter - Mobile Friendly Horizontal Scroll */}
       <div className="relative mb-8">
         {/* Left Shadow Gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-slate-800/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-slate-800/50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none" />
         
         {/* Left Scroll Button - Hidden on mobile, show on larger screens */}
         <button
           onClick={() => handleScroll('left')}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-slate-800 rounded-full text-slate-400 hover:text-white hover:bg-slate-700 transition-colors hidden sm:block"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-white dark:bg-slate-800 rounded-full text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors hidden sm:block shadow-md"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -145,12 +145,12 @@ export default function Projects() {
         </div>
         
         {/* Right Shadow Gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-slate-800/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-slate-800/50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none" />
         
         {/* Right Scroll Button - Hidden on mobile, show on larger screens */}
         <button
           onClick={() => handleScroll('right')}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-slate-800 rounded-full text-slate-400 hover:text-white hover:bg-slate-700 transition-colors hidden sm:block"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-white dark:bg-slate-800 rounded-full text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors hidden sm:block shadow-md"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-4 h-4" />
