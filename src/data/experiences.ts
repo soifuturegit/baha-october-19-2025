@@ -2,11 +2,12 @@ export interface Experience {
   title: string;
   company: string;
   period: string;
+  location?: string;
   description: string;
   achievements: string[];
   skills: string[];
   type: 'full-time' | 'part-time' | 'freelance' | 'contract';
-  logo: string; // Add this new field
+  logo: string;
   url?: string;
 }
 
@@ -14,7 +15,8 @@ export const experiences: Experience[] = [
   {
     title: 'Software & Fulfillment Lead',
     company: 'oLab.',
-    period: ' Jan 2024 - April 2025',
+    period: 'Jan 2024 - April 2025',
+    location: 'Melbourne, Australia (Remote)',
     type: 'full-time',
     description: 'Leading client projects and managing digital solutions from conception to delivery.',
     achievements: [
@@ -30,6 +32,7 @@ export const experiences: Experience[] = [
     title: 'Product Developer & Content Specialist',
     company: 'Vocabulary Builder',
     period: 'Dec 2023 - Jun 2024',
+    location: 'Remote',
     type: 'contract',
     description: 'Developed educational content and maintained full-stack applications for language learning.',
     achievements: [
@@ -45,6 +48,7 @@ export const experiences: Experience[] = [
     title: 'Promotion And Public Relations Executive',
     company: 'Aemers',
     period: '2018 - 2019',
+    location: 'Dhaka, Bangladesh',
     type: 'part-time',
     description: 'Built responsive web interfaces and implemented RESTful APIs for startup clients.',
     achievements: [
@@ -60,6 +64,7 @@ export const experiences: Experience[] = [
     title: 'Customer Support & Community Specialist',
     company: 'Passive Journal',
     period: 'Jan 2022 - Dec 2022',
+    location: 'Remote',
     type: 'full-time',
     description: 'Built responsive web interfaces and implemented RESTful APIs for startup clients.',
     achievements: [
@@ -72,9 +77,10 @@ export const experiences: Experience[] = [
     logo: 'https://live.staticflickr.com/65535/54302064994_aba9830668_b.jpg'
   },
   {
-    title: 'Community Manager & Sales Associate ',
+    title: 'Community Manager & Sales Associate',
     company: 'Apars Classroom',
     period: 'Jan 2020 - July 2021',
+    location: 'Dhaka, Bangladesh',
     type: 'part-time',
     description: 'Bangladesh 2nd Largest edtech platform that offers K-12 academic courses via 3D lectures.',
     achievements: [
