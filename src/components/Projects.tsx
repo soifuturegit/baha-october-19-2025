@@ -40,7 +40,7 @@ const projects = [
   },
   {
     "title": "Bazardor",
-    "description": "Bangladesh’s essential item price tracker, ensuring transparency and fairness in the market by comparing real-time prices.",
+    "description": "Bangladesh's essential item price tracker, ensuring transparency and fairness in the market by comparing real-time prices.",
     "tech": ["Next.js", "TypeScript", "Supabase", "TailwindCSS"],
     "live": "https://ajker-bazardor.info",
     "image": "https://live.staticflickr.com/65535/54301984598_2645d9dc9a_k.jpg",
@@ -65,7 +65,7 @@ const projects = [
     "category": "initiative",
     "showInAll": true
   }
-  
+
 ];
 
 const categories = [
@@ -77,7 +77,7 @@ const categories = [
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
+
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'all') {
       return projects.filter(project => project.showInAll);
@@ -98,20 +98,15 @@ export default function Projects() {
 
   return (
     <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" id="projects">
-      <div className="max-w-2xl mb-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-          Projects and Initiative
-        </h2>
-        <p className="text-slate-400 text-lg mt-4">
-          A selection of my recent work and personal projects.
-        </p>
-      </div>
-      
+      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+        Projects and Initiative
+      </h2>
+
       {/* Category Filter - Mobile Friendly Horizontal Scroll */}
       <div className="relative mb-8">
         {/* Left Shadow Gradient */}
         <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-slate-800/50 to-transparent z-10 pointer-events-none" />
-        
+
         {/* Left Scroll Button - Hidden on mobile, show on larger screens */}
         <button
           onClick={() => handleScroll('left')}
@@ -122,7 +117,7 @@ export default function Projects() {
         </button>
 
         {/* Categories Container */}
-        <div 
+        <div
           ref={scrollContainerRef}
           className="flex gap-2 overflow-x-auto scrollbar-hide px-6 sm:px-8"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -133,8 +128,8 @@ export default function Projects() {
               onClick={() => setSelectedCategory(category.id)}
               className={`
                 flex-shrink-0 px-4 py-2 rounded-lg transition-all text-sm font-medium whitespace-nowrap
-                ${selectedCategory === category.id 
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
+                ${selectedCategory === category.id
+                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'}
               `}
             >
@@ -142,10 +137,10 @@ export default function Projects() {
             </button>
           ))}
         </div>
-        
+
         {/* Right Shadow Gradient */}
         <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-slate-800/50 to-transparent z-10 pointer-events-none" />
-        
+
         {/* Right Scroll Button - Hidden on mobile, show on larger screens */}
         <button
           onClick={() => handleScroll('right')}
@@ -156,71 +151,65 @@ export default function Projects() {
         </button>
       </div>
 
-      <div className="grid gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredProjects.map((project, index) => (
-          <div 
-            key={index} 
-            className="group bg-slate-900/50 rounded-xl border border-slate-800/50 overflow-hidden hover:border-blue-500/30 transition-all duration-300"
+          <div
+            key={index}
+            className="bg-neutral-950 rounded-2xl border border-neutral-800 overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-4">
-              {/* Image Section - Fixed aspect ratio container */}
-              <div className="lg:col-span-5 relative aspect-video rounded-lg overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-slate-900/25 to-transparent" />
+            {/* Image */}
+            <div className="relative aspect-video overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/25 to-transparent" />
+            </div>
+
+            {/* Content */}
+            <div className="p-6 flex flex-col flex-1">
+              <div className="flex items-center gap-2 mb-3">
+                <span className={`
+                  px-2 py-1 text-xs font-medium rounded-full uppercase tracking-wide
+                  ${project.category === 'initiative'
+                    ? 'bg-emerald-500/20 text-emerald-400'
+                    : 'bg-blue-500/20 text-blue-400'}
+                `}>
+                  {project.category === 'initiative' ? 'Initiative' : 'Work'}
+                </span>
               </div>
 
-              {/* Content Section */}
-              <div className="lg:col-span-7 flex flex-col justify-center">
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className={`
-                        px-2 py-1 text-xs font-medium rounded-full
-                        ${project.category === 'initiative' 
-                          ? 'bg-blue-500/20 text-blue-300' 
-                          : 'bg-purple-500/20 text-purple-300'}
-                      `}>
-                        {project.category === 'initiative' ? 'Personal Initiative' : 'Work Portfolio'}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
+              <h3 className="text-lg font-bold text-white mb-3 leading-tight">
+                {project.title}
+              </h3>
 
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span 
-                        key={i} 
-                        className="px-2.5 py-1 text-xs text-slate-300 bg-slate-800/50 rounded-full border border-slate-700/50"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              <p className="text-neutral-400 text-[14px] leading-relaxed mb-4 flex-1">
+                {project.description}
+              </p>
 
-                  {/* Link */}
-                  <div>
-                    <a 
-                      href={project.live}
-                      className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group/link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="text-sm font-medium">View Project</span>
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-                    </a>
-                  </div>
-                </div>
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1.5 bg-neutral-900 text-neutral-300 rounded-lg text-xs border border-neutral-800"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
+
+              {/* Link */}
+              <a
+                href={project.live}
+                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors group/link font-medium text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>View Project</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+              </a>
             </div>
           </div>
         ))}
@@ -228,7 +217,7 @@ export default function Projects() {
 
       {filteredProjects.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-slate-400 text-lg">No projects found in this category.</p>
+          <p className="text-neutral-400 text-lg">No projects found in this category.</p>
         </div>
       )}
     </section>
