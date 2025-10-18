@@ -83,27 +83,13 @@ export default function Hero() {
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50 mt-6">
           <div className="p-6 sm:p-8 lg:p-12">
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-lg sm:text-xl font-semibold text-white">What drives me forward?</span>
+              <span className="text-lg sm:text-xl font-semibold text-white">A little more about me</span>
             </div>
 
             <div className="space-y-4 text-sm sm:text-base text-slate-400 leading-relaxed">
               <p>I believe opportunity should never be limited by circumstance. Growing up, I saw how a lack of resources held people back—including my own family. But I also learned that with the right tools, anyone can change their future. That's what drives me—using technology, entrepreneurship, and education to break barriers and create opportunities. Whether it's building platforms, mentoring students, or launching new ideas, I'm always looking for ways to make an impact and help others move forward.</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8">
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">5+</div>
-                <div className="text-slate-400 text-sm sm:text-base">Years of Experience</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">4+</div>
-                <div className="text-slate-400 text-sm sm:text-base">Social Projects</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">100000+</div>
-                <div className="text-slate-400 text-sm sm:text-base">Lives Impacted</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
