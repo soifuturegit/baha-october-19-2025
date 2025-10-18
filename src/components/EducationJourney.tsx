@@ -89,7 +89,7 @@ export default function EducationJourney() {
           <div className="relative">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8">Gap Years & Self-Learning</h3>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="space-y-6">
               {timeline.map((item, index) => {
                 return (
                   <div key={index} className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/5">
