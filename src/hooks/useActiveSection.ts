@@ -14,6 +14,9 @@ export function useActiveSection() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
+        } else if (activeSection === entry.target.id) {
+          // Clear active section if it's no longer intersecting
+          setActiveSection('');
         }
       });
     }, options);
@@ -25,7 +28,7 @@ export function useActiveSection() {
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [activeSection]);
 
   return activeSection;
 }
