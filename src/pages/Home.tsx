@@ -9,6 +9,7 @@ import Impact from '../components/Impact';
 import Contact from '../components/Contact';
 import Gallery from '../components/Gallery';
 import Companies from '../components/Companies';
+import FounderFeedback from '../components/FounderFeedback';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Projects />
       <Gallery />
       <Companies />
+      <FounderFeedback />
       <Impact />
       <Achievements />
       <Interests />
