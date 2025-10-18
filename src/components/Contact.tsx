@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, Briefcase } from 'lucide-react';
 import { personalInfo } from '../data';
 
 export default function Contact() {
@@ -32,6 +32,17 @@ export default function Contact() {
                 <Phone className="w-5 h-5 text-emerald-500" />
               </div>
               <span className="text-[15px] font-medium">{personalInfo.contact.phone}</span>
+            </a>
+            <a
+              href="https://www.upwork.com/freelancers/~010ac34abc2d2bd46c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-neutral-400 hover:text-emerald-400 transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0">
+                <Briefcase className="w-5 h-5 text-emerald-500" />
+              </div>
+              <span className="text-[15px] font-medium">Hire me on Upwork</span>
             </a>
           </div>
         </div>
