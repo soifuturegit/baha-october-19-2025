@@ -64,13 +64,21 @@ export default function Navbar() {
                   : location.pathname === item.href;
 
               const NavLink = item.href.startsWith('#') ? 'a' : Link;
-              
+
+              const handleClick = (e: React.MouseEvent) => {
+                setIsOpen(false);
+                if (item.href === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              };
+
               return (
                 <NavLink
                   key={item.label}
                   to={item.href.startsWith('#') ? undefined : item.href}
                   href={item.href.startsWith('#') ? item.href : undefined}
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleClick}
                   className={`
                     relative group flex items-center gap-3 px-4 py-3 text-[15px] font-medium rounded-xl
                     hover:bg-neutral-900 transition-all duration-300
