@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, Menu, X, GraduationCap, ChevronRight, Image, Building2 } from 'lucide-react';
+import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, Menu, X, GraduationCap, ChevronRight, Image, Building2, Sun, Moon } from 'lucide-react';
 import { useActiveSection } from '../hooks/useActiveSection';
+import { useTheme } from '../contexts/ThemeContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const activeSection = useActiveSection();
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { label: 'Home', href: '/', icon: Home },
@@ -103,7 +105,24 @@ export default function Navbar() {
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-slate-800/50">
+        <div className="p-6 border-t border-slate-800/50 space-y-4">
+          <button
+            onClick={toggleTheme}
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-all duration-300 group"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <>
+                <Sun className="w-5 h-5 text-emerald-400 group-hover:rotate-90 transition-transform duration-300" />
+                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Light Mode</span>
+              </>
+            ) : (
+              <>
+                <Moon className="w-5 h-5 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">Dark Mode</span>
+              </>
+            )}
+          </button>
           <p className="text-sm text-slate-500 text-center">
             © {new Date().getFullYear()} All rights reserved
           </p>

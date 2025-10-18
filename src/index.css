@@ -14,9 +14,17 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
-  
+
   body {
-    @apply bg-slate-950 text-slate-200 transition-colors duration-300 font-space-grotesk text-[15px] overflow-x-hidden;
+    @apply transition-colors duration-300 font-space-grotesk text-[15px] overflow-x-hidden;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-200;
+  }
+
+  .light body {
+    @apply bg-gray-50 text-gray-900;
   }
 
   h1 {
@@ -64,5 +72,134 @@
   .hide-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Light Mode Overrides */
+  .light .bg-slate-800\/50 {
+    @apply bg-white/80;
+  }
+
+  .light .bg-slate-900\/50 {
+    @apply bg-gray-100;
+  }
+
+  .light .border-slate-700\/50 {
+    @apply border-gray-200;
+  }
+
+  .light .border-slate-800\/50 {
+    @apply border-gray-200;
+  }
+
+  .light .text-slate-200 {
+    @apply text-gray-800;
+  }
+
+  .light .text-slate-300 {
+    @apply text-gray-700;
+  }
+
+  .light .text-slate-400 {
+    @apply text-gray-600;
+  }
+
+  .light .text-slate-500 {
+    @apply text-gray-500;
+  }
+
+  .light .hover\:text-slate-200:hover {
+    @apply text-gray-900;
+  }
+
+  .light .hover\:border-blue-500\/30:hover {
+    @apply border-emerald-400;
+  }
+
+  .light .bg-slate-800 {
+    @apply bg-white;
+  }
+
+  .light .bg-slate-900 {
+    @apply bg-gray-50;
+  }
+
+  .light .text-gradient-green {
+    @apply bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-transparent bg-clip-text;
+  }
+
+  .light .text-emerald-400 {
+    @apply text-emerald-600;
+  }
+
+  .light .text-blue-400 {
+    @apply text-blue-600;
+  }
+
+  .light .text-pink-400 {
+    @apply text-pink-600;
+  }
+
+  .light .ring-emerald-500\/20 {
+    @apply ring-emerald-300;
+  }
+
+  .light .hover\:text-emerald-400:hover {
+    @apply text-emerald-600;
+  }
+
+  .light .border-blue-500\/30 {
+    @apply border-emerald-200;
+  }
+
+  .light .bg-blue-500 {
+    @apply bg-emerald-600;
+  }
+
+  .light .hover\:bg-blue-600:hover {
+    @apply bg-emerald-700;
+  }
+
+  .light .bg-slate-800\/50 {
+    @apply bg-white/90;
+  }
+
+  .light .hover\:bg-slate-800:hover {
+    @apply bg-gray-100;
+  }
+
+  .light .hover\:bg-slate-800\/50:hover {
+    @apply bg-gray-100;
+  }
+
+  .light .border-slate-700\/50 {
+    @apply border-gray-200;
+  }
+
+  .light .text-white {
+    @apply text-gray-900;
+  }
+
+  .light .bg-slate-900\/95 {
+    @apply bg-white/95;
+  }
+
+  .light .text-slate-600 {
+    @apply text-gray-600;
+  }
+
+  .light .hover\:text-slate-900:hover {
+    @apply text-gray-900;
+  }
+
+  .light .text-blue-500 {
+    @apply text-emerald-600;
+  }
+
+  .light .hover\:text-blue-400:hover {
+    @apply text-emerald-600;
+  }
+
+  .light .group-hover\:text-blue-400:hover {
+    @apply text-emerald-600;
   }
 }
