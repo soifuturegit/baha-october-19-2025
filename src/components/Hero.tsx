@@ -13,7 +13,7 @@ export default function Hero() {
           <div className="p-6 sm:p-8 lg:p-12">
             <div className="flex flex-col-reverse sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
               <div className="flex-1 space-y-4 sm:space-y-6 text-center sm:text-left">
-                <h1 className="text-gradient-green text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                   Hey, I'm {personalInfo.name}
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl">
@@ -22,7 +22,7 @@ export default function Hero() {
                 <div className="flex gap-6 justify-center sm:justify-start pt-2">
                   <a
                     href={personalInfo.contact.linkedin}
-                    className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors group font-medium"
+                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -31,7 +31,7 @@ export default function Hero() {
                   </a>
                   <a
                     href={personalInfo.contact.X}
-                    className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors group font-medium"
+                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -42,7 +42,7 @@ export default function Hero() {
               </div>
 
               <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex-shrink-0 relative group">
-                <div className="w-full h-full rounded-2xl overflow-hidden relative ring-2 ring-emerald-500/20">
+                <div className="w-full h-full rounded-2xl overflow-hidden relative ring-2 ring-slate-500/20">
                   <img
                     src={personalInfo.images[currentImageIndex]}
                     alt={personalInfo.name}
@@ -83,7 +83,7 @@ export default function Hero() {
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50 mt-6">
           <div className="p-6 sm:p-8 lg:p-12">
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-lg sm:text-xl font-semibold text-emerald-400">What drives me forward?</span>
+              <span className="text-lg sm:text-xl font-semibold text-white">What drives me forward?</span>
             </div>
 
             <div className="space-y-4 text-base sm:text-lg text-slate-300 leading-relaxed">
@@ -92,15 +92,15 @@ export default function Hero() {
 
             <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8">
               <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mb-1">5+</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">5+</div>
                 <div className="text-slate-400 text-sm sm:text-base">Years of Experience</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mb-1">4+</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">4+</div>
                 <div className="text-slate-400 text-sm sm:text-base">Social Projects</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mb-1">100000+</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">100000+</div>
                 <div className="text-slate-400 text-sm sm:text-base">Lives Impacted</div>
               </div>
             </div>
