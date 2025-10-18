@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, BookOpen, Rocket, School, ChevronDown, ChevronUp, Award, Star } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const timeline = [
   {
@@ -7,7 +7,6 @@ const timeline = [
     institution: "Entrepreneurial Projects & Work",
     period: "2022-2024",
     description: "Utilized this time to learn programming, build projects, and create social impact through technology initiatives. Completed various online courses in computer science and web development.",
-    icon: BookOpen,
     gradient: "from-emerald-500 to-teal-500"
   },
   {
@@ -15,7 +14,6 @@ const timeline = [
     institution: "Government Tolaram College, Narayanganj",
     period: "Feb 2022",
     description: "Graduated from Science Group with the final GPA of 4.92/5.",
-    icon: School,
     gradient: "from-blue-500 to-cyan-500"
   }
 ];
@@ -65,14 +63,9 @@ export default function EducationJourney() {
         className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
       >
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="p-2.5 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl border border-emerald-500/30">
-              <GraduationCap className="w-6 h-6 text-emerald-400" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-              Education Journey
-            </h2>
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-3">
+            Education Journey
+          </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
             A unique path of self-directed learning, formal education, and continuous growth
           </p>
@@ -98,22 +91,13 @@ export default function EducationJourney() {
 
             <div className="space-y-8">
               {timeline.map((item, index) => {
-                const Icon = item.icon;
                 return (
                   <div
                     key={index}
-                    className="relative pl-20 group/item animate-fadeIn"
+                    className="relative pl-6 group/item animate-fadeIn"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className={`absolute left-0 p-3 bg-gradient-to-br ${item.gradient} rounded-xl shadow-lg shadow-${item.gradient}/20 group-hover/item:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-
-                    <div className="relative bg-slate-800/50 rounded-xl p-6 sm:p-8 border border-slate-700/50 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 group-hover/item:translate-x-2">
-                      <div className="absolute top-4 right-4">
-                        <Star className="w-5 h-5 text-emerald-400/30 group-hover/item:text-emerald-400 group-hover/item:rotate-12 transition-all duration-300" />
-                      </div>
-
+                    <div className="relative bg-slate-800/50 rounded-xl p-6 sm:p-8 border border-slate-700/50 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300">
                       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                         <h3 className="text-xl sm:text-2xl font-bold text-white">
                           {item.title}
@@ -123,8 +107,7 @@ export default function EducationJourney() {
                         </span>
                       </div>
 
-                      <p className="text-emerald-400 text-sm sm:text-base font-medium mb-4 flex items-center gap-2">
-                        <School className="w-4 h-4" />
+                      <p className="text-emerald-400 text-sm sm:text-base font-medium mb-4">
                         {item.institution}
                       </p>
 
@@ -139,12 +122,7 @@ export default function EducationJourney() {
           </div>
 
           <div className="pt-8 border-t border-slate-700/50">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg border border-blue-500/30">
-                <Award className="w-5 h-5 text-blue-400" />
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">Courses & Certifications</h3>
-            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8">Courses & Certifications</h3>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {Object.entries(coursesData).map(([category, courses], catIndex) => (
@@ -160,7 +138,7 @@ export default function EducationJourney() {
                     {courses.map((course, courseIndex) => (
                       <li key={courseIndex} className="group/course">
                         <div className="flex items-start gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-200">
-                          <div className="mt-2 w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 group-hover/course:scale-150 transition-transform duration-200" />
+                          <div className="mt-2 w-1.5 h-1.5 bg-slate-500 rounded-full flex-shrink-0 group-hover/course:scale-150 transition-transform duration-200" />
                           <div className="flex-1">
                             <span className="text-sm leading-relaxed block">
                               <span className="font-medium text-slate-300">{course.name}</span>
