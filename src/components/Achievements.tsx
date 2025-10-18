@@ -70,8 +70,8 @@ export default function Achievements() {
             onClick={() => setActiveCategory(id)}
             className={`
               flex items-center gap-2 px-4 sm:px-6 py-2 rounded-lg transition-all text-sm sm:text-base
-              ${activeCategory === id 
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
+              ${activeCategory === id
+                ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800/50'}
             `}
           >

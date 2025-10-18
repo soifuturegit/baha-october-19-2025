@@ -129,7 +129,7 @@ export default function Projects() {
               className={`
                 flex-shrink-0 px-4 py-2 rounded-lg transition-all text-sm font-medium whitespace-nowrap
                 ${selectedCategory === category.id
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                  ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'}
               `}
             >

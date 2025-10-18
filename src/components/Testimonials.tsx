@@ -113,8 +113,8 @@ export default function Testimonials() {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  index === activeIndex 
-                    ? 'bg-blue-500 w-4' 
+                  index === activeIndex
+                    ? 'bg-emerald-500 w-4'
                     : 'bg-slate-600 hover:bg-slate-500'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
