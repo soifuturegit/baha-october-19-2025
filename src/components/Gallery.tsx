@@ -164,7 +164,7 @@ export default function Gallery() {
             className={`
               flex items-center gap-2 px-4 sm:px-6 py-2 rounded-lg transition-all text-sm sm:text-base
               ${selectedCategory === category.id 
-                ? 'bg-zinc-800 dark:bg-zinc-700 text-white shadow-lg' 
+                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
                 : 'text-slate-400 hover:text-white hover:bg-slate-800/50'}
             `}
           >

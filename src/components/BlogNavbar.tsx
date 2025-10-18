@@ -9,7 +9,7 @@ export default function BlogNavbar({ searchQuery = '', onSearchChange = (value: 
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center gap-2 text-white hover:text-zinc-300 transition-colors">
+            <Link to="/" className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors">
               <Home className="w-5 h-5" />
               <span className="font-semibold">Home</span>
             </Link>
@@ -24,7 +24,7 @@ export default function BlogNavbar({ searchQuery = '', onSearchChange = (value: 
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 text-sm"
+                className="w-full pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-sm"
               />
             </div>
           </div>

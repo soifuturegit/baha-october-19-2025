@@ -20,12 +20,11 @@
   }
 
   .dark body {
-    background-color: #18181B;
-    @apply text-slate-200;
+    @apply bg-slate-950 text-slate-200;
   }
 
   .light body {
-    @apply bg-white text-gray-900;
+    @apply bg-gray-50 text-gray-900;
   }
 
   h1 {
@@ -76,95 +75,20 @@
   }
 
   /* Light Mode Overrides */
-  .light body {
-    @apply bg-white;
-  }
-
-  /* Backgrounds */
-  .light .bg-slate-950 {
-    background-color: #FFFFFF;
-  }
-
-  .light .bg-slate-900 {
-    @apply bg-gray-50;
-  }
-
-  .light .bg-slate-900\/95 {
-    background-color: #FFFFFF;
-    @apply shadow-lg;
+  .light .bg-slate-800\/50 {
+    @apply bg-white/80;
   }
 
   .light .bg-slate-900\/50 {
-    background-color: #FFFFFF;
-  }
-
-  .light .bg-slate-800 {
-    background-color: #FFFFFF;
-    @apply shadow-sm;
-  }
-
-  .light .bg-slate-800\/50 {
-    background-color: #FFFFFF;
-    @apply shadow-sm;
-  }
-
-  .light .bg-slate-700 {
     @apply bg-gray-100;
-  }
-
-  .light .bg-slate-700\/50 {
-    @apply bg-gray-50;
-  }
-
-  /* Dark Mode Backgrounds */
-  .dark .bg-slate-950 {
-    background-color: #18181B;
-  }
-
-  .dark .bg-slate-900 {
-    background-color: #18181B;
-  }
-
-  .dark .bg-slate-900\/95 {
-    background-color: rgba(24, 24, 27, 0.95);
-  }
-
-  .dark .bg-slate-900\/50 {
-    background-color: rgba(24, 24, 27, 0.5);
-  }
-
-  .dark .bg-slate-800 {
-    background-color: rgba(24, 24, 27, 0.8);
-  }
-
-  .dark .bg-slate-800\/50 {
-    background-color: rgba(24, 24, 27, 0.5);
-  }
-
-  /* Borders */
-  .light .border-slate-800\/50 {
-    @apply border-gray-200;
   }
 
   .light .border-slate-700\/50 {
     @apply border-gray-200;
   }
 
-  .light .border-slate-700 {
-    @apply border-gray-300;
-  }
-
-  .light .border-blue-500\/30 {
-    @apply border-emerald-300;
-  }
-
-  .light .hover\:border-blue-500\/30:hover {
-    @apply border-emerald-500;
-  }
-
-  /* Text Colors */
-  .light .text-white {
-    @apply text-gray-900;
+  .light .border-slate-800\/50 {
+    @apply border-gray-200;
   }
 
   .light .text-slate-200 {
@@ -183,20 +107,26 @@
     @apply text-gray-500;
   }
 
-  .light .text-slate-600 {
-    @apply text-gray-700;
-  }
-
-  /* Hover Text Colors */
   .light .hover\:text-slate-200:hover {
     @apply text-gray-900;
   }
 
-  .light .hover\:text-slate-900:hover {
-    @apply text-gray-900;
+  .light .hover\:border-blue-500\/30:hover {
+    @apply border-emerald-400;
   }
 
-  /* Accent Colors */
+  .light .bg-slate-800 {
+    @apply bg-white;
+  }
+
+  .light .bg-slate-900 {
+    @apply bg-gray-50;
+  }
+
+  .light .text-gradient-green {
+    @apply bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-transparent bg-clip-text;
+  }
+
   .light .text-emerald-400 {
     @apply text-emerald-600;
   }
@@ -205,183 +135,71 @@
     @apply text-blue-600;
   }
 
-  .light .text-blue-500 {
-    @apply text-emerald-600;
-  }
-
   .light .text-pink-400 {
     @apply text-pink-600;
   }
 
-  .light .text-purple-400 {
-    @apply text-purple-600;
+  .light .ring-emerald-500\/20 {
+    @apply ring-emerald-300;
   }
 
-  .light .text-indigo-400 {
-    @apply text-indigo-600;
-  }
-
-  .light .text-teal-400 {
-    @apply text-teal-600;
-  }
-
-  .light .text-cyan-400 {
-    @apply text-cyan-600;
-  }
-
-  .light .text-green-400 {
-    @apply text-green-600;
-  }
-
-  /* Hover Accent Colors */
   .light .hover\:text-emerald-400:hover {
-    @apply text-emerald-700;
+    @apply text-emerald-600;
   }
 
-  .light .hover\:text-blue-400:hover {
-    @apply text-emerald-700;
+  .light .border-blue-500\/30 {
+    @apply border-emerald-200;
   }
 
-  .light .group-hover\:text-blue-400 {
-    @apply group-hover:text-emerald-600;
-  }
-
-  /* Background Accent Colors */
   .light .bg-blue-500 {
     @apply bg-emerald-600;
-  }
-
-  .light .bg-emerald-500\/10 {
-    @apply bg-emerald-50;
-  }
-
-  .light .bg-blue-500\/10 {
-    @apply bg-blue-50;
-  }
-
-  .light .bg-green-500\/10 {
-    @apply bg-green-50;
-  }
-
-  .light .bg-purple-500\/10 {
-    @apply bg-purple-50;
-  }
-
-  .light .bg-pink-500\/10 {
-    @apply bg-pink-50;
-  }
-
-  /* Hover Background Colors */
-  .light .hover\:bg-slate-800:hover {
-    @apply bg-gray-50;
-  }
-
-  .light .hover\:bg-slate-800\/50:hover {
-    @apply bg-gray-50;
   }
 
   .light .hover\:bg-blue-600:hover {
     @apply bg-emerald-700;
   }
 
-  .light .hover\:bg-emerald-500\/20:hover {
-    @apply bg-emerald-100;
+  .light .bg-slate-800\/50 {
+    @apply bg-white/90;
   }
 
-  /* Gradient Text */
-  .light .text-gradient-green {
-    @apply bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-transparent bg-clip-text;
+  .light .hover\:bg-slate-800:hover {
+    @apply bg-gray-100;
   }
 
-  .light .text-gradient-soft {
-    @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text;
+  .light .hover\:bg-slate-800\/50:hover {
+    @apply bg-gray-100;
   }
 
-  /* Rings and Shadows */
-  .light .ring-emerald-500\/20 {
-    @apply ring-emerald-200;
+  .light .border-slate-700\/50 {
+    @apply border-gray-200;
   }
 
-  .light .shadow-2xl {
-    @apply shadow-xl;
+  .light .text-white {
+    @apply text-gray-900;
   }
 
-  /* Category/Badge Styles */
-  .light .bg-emerald-500\/10 {
-    @apply bg-emerald-100 text-emerald-700;
+  .light .bg-slate-900\/95 {
+    @apply bg-white/95;
   }
 
-  .light .bg-blue-500\/10 {
-    @apply bg-blue-100 text-blue-700;
+  .light .text-slate-600 {
+    @apply text-gray-600;
   }
 
-  .light .bg-purple-500\/10 {
-    @apply bg-purple-100 text-purple-700;
+  .light .hover\:text-slate-900:hover {
+    @apply text-gray-900;
   }
 
-  .light .bg-pink-500\/10 {
-    @apply bg-pink-100 text-pink-700;
+  .light .text-blue-500 {
+    @apply text-emerald-600;
   }
 
-  .light .bg-indigo-500\/10 {
-    @apply bg-indigo-100 text-indigo-700;
+  .light .hover\:text-blue-400:hover {
+    @apply text-emerald-600;
   }
 
-  .light .bg-teal-500\/10 {
-    @apply bg-teal-100 text-teal-700;
-  }
-
-  .light .bg-cyan-500\/10 {
-    @apply bg-cyan-100 text-cyan-700;
-  }
-
-  .light .bg-green-500\/10 {
-    @apply bg-green-100 text-green-700;
-  }
-
-  .light .bg-yellow-500\/10 {
-    @apply bg-yellow-100 text-yellow-700;
-  }
-
-  .light .bg-orange-500\/10 {
-    @apply bg-orange-100 text-orange-700;
-  }
-
-  .light .bg-red-500\/10 {
-    @apply bg-red-100 text-red-700;
-  }
-
-  /* Shadow Gradients for Light Mode */
-  .light [class*="from-slate-800"] {
-    --tw-gradient-from: rgb(255 255 255 / 0.8) var(--tw-gradient-from-position);
-  }
-
-  /* Zinc Accent Colors for Light Mode */
-  .light .text-zinc-600 {
-    color: rgb(63 63 70);
-  }
-
-  .light .bg-zinc-700 {
-    background-color: rgb(39 39 42);
-  }
-
-  .light .bg-zinc-800 {
-    background-color: rgb(39 39 42);
-  }
-
-  .light .border-zinc-500\/30 {
-    border-color: rgb(161 161 170 / 0.3);
-  }
-
-  .light .hover\:border-zinc-500\/30:hover {
-    border-color: rgb(161 161 170 / 0.5);
-  }
-
-  .light .bg-zinc-500\/10 {
-    background-color: rgb(228 228 231);
-  }
-
-  .light .bg-zinc-500\/20 {
-    background-color: rgb(212 212 216);
+  .light .group-hover\:text-blue-400:hover {
+    @apply text-emerald-600;
   }
 }

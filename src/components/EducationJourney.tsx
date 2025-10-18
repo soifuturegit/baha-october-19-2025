@@ -65,7 +65,7 @@ export default function EducationJourney() {
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
             Education
-            <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-zinc-700 to-zinc-600 rounded-full opacity-50" />
+            <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
           </h2>
           {/* <p className="text-slate-400 text-lg mt-4">
             A unique path of self-directed learning and growth.
@@ -100,20 +100,20 @@ export default function EducationJourney() {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="absolute left-0 p-2 bg-slate-900 rounded-lg border border-slate-700/50">
-                      <Icon className="w-6 h-6 text-zinc-600 dark:text-zinc-400" />
+                      <Icon className="w-6 h-6 text-blue-400" />
                     </div>
 
-                    <div className="bg-slate-900/50 rounded-lg p-6 border border-slate-800/50 hover:border-zinc-500/30 transition-all duration-300">
+                    <div className="bg-slate-900/50 rounded-lg p-6 border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         <h3 className="text-xl font-semibold text-white">
                           {item.title}
                         </h3>
-                        <span className="text-zinc-600 dark:text-zinc-400 text-sm">
+                        <span className="text-blue-400 text-sm">
                           {item.period}
                         </span>
                       </div>
 
-                      <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-3">
+                      <p className="text-blue-400 text-sm mb-3">
                         {item.institution}
                       </p>
 

@@ -27,7 +27,7 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 p-3 bg-zinc-800 text-white rounded-full shadow-lg hover:bg-zinc-700 transition-all duration-300 hover:scale-110 active:scale-95"
+        className="lg:hidden fixed bottom-6 right-6 z-50 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 hover:scale-110 active:scale-95"
         aria-label="Toggle menu"
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="p-6 border-b border-slate-800/50">
           <Link to="/" className="relative group inline-flex items-center" onClick={() => setIsOpen(false)}>
             <div className="flex items-center space-x-1.5">
-              <span className="text-lg font-bold text-zinc-800 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-all duration-300">
+              <span className="text-lg font-bold text-blue-500 group-hover:text-blue-400 transition-all duration-300">
                 Bahauddin
               </span>
               <span className="text-lg font-light text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
@@ -79,7 +79,7 @@ export default function Navbar() {
                 >
                   <Icon className={`
                     w-5 h-5 transition-colors duration-300
-                    ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-white'}
+                    ${isActive ? 'text-blue-400' : 'text-slate-400 group-hover:text-blue-400'}
                   `} />
                   <span className={`
                     relative z-10 transition-colors duration-300
@@ -94,7 +94,7 @@ export default function Navbar() {
                   <ChevronRight className={`
                     absolute right-3 w-4 h-4 transition-all duration-300
                     ${isActive 
-                      ? 'opacity-100 translate-x-0 text-white' 
+                      ? 'opacity-100 translate-x-0 text-blue-400' 
                       : 'opacity-0 -translate-x-2 text-slate-400 group-hover:opacity-100 group-hover:translate-x-0'
                     }
                   `} />
@@ -118,7 +118,7 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <Moon className="w-5 h-5 text-zinc-600 group-hover:rotate-12 transition-transform duration-300" />
+                <Moon className="w-5 h-5 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">Dark Mode</span>
               </>
             )}

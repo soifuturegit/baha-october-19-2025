@@ -53,8 +53,8 @@ export default function Testimonials() {
             >
               <div className="bg-slate-900/50 rounded-xl p-6 md:p-8 border border-slate-800/50 relative">
                 {/* Quote Icon */}
-                <div className="absolute -top-5 -left-2 w-12 h-12 bg-zinc-500/20 dark:bg-zinc-500/30 rounded-full flex items-center justify-center">
-                  <Quote className="w-6 h-6 text-zinc-600 dark:text-zinc-400" />
+                <div className="absolute -top-5 -left-2 w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                  <Quote className="w-6 h-6 text-blue-400" />
                 </div>
                 
                 {/* Rating Stars */}
@@ -89,7 +89,7 @@ export default function Testimonials() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-zinc-600 dark:text-zinc-400 text-sm">{testimonial.role}, {testimonial.company}</p>
+                    <p className="text-blue-400 text-sm">{testimonial.role}, {testimonial.company}</p>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function Testimonials() {
                 onClick={() => setActiveIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all ${
                   index === activeIndex 
-                    ? 'bg-zinc-700 w-4' 
+                    ? 'bg-blue-500 w-4' 
                     : 'bg-slate-600 hover:bg-slate-500'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}

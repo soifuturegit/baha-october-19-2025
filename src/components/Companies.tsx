@@ -84,7 +84,7 @@ export default function Companies() {
         >
           <div className="flex gap-6 px-12">
             {companies.map((company) => (
-              <div key={company.id} className="group bg-slate-900/50 rounded-xl border border-slate-800/50 hover:border-zinc-500/30 transition-all duration-300 w-48">
+              <div key={company.id} className="group bg-slate-900/50 rounded-xl border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300 w-48">
                 <div className="p-6">
                   {/* Logo */}
                   <div className="flex justify-center mb-4">
@@ -108,7 +108,7 @@ export default function Companies() {
                           href={company.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 text-sm transition-colors"
+                          className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm transition-colors"
                         >
                           Visit Website
                           <ArrowUpRight className="w-4 h-4" />

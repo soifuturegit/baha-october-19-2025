@@ -43,7 +43,7 @@ export default function Experience() {
         {experiences.map((experience, index) => (
           <div 
             key={index}
-            className="bg-slate-900/50 rounded-lg border border-slate-800/50 hover:border-zinc-500/30 transition-all duration-300"
+            className="bg-slate-900/50 rounded-lg border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300"
           >
             {/* Header - Always Visible */}
             <button
@@ -51,7 +51,7 @@ export default function Experience() {
               className="w-full px-6 py-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4 text-left group/header"
             >
               <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-xl bg-slate-800/50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-700/50 group-hover/header:border-zinc-500/30 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-slate-800/50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-700/50 group-hover/header:border-blue-500/30 transition-colors">
                   <img 
                     src={experience.logo} 
                     alt={`${experience.company} logo`}
@@ -59,7 +59,7 @@ export default function Experience() {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-white group-hover/header:text-zinc-300 transition-colors mb-1">
+                  <h3 className="text-xl font-semibold text-white group-hover/header:text-blue-400 transition-colors mb-1">
                     {experience.title}
                   </h3>
                   <div className="flex items-center gap-3 mb-2">
@@ -68,13 +68,13 @@ export default function Experience() {
                         href={experience.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 transition-colors font-medium"
+                        className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
                         onClick={(e) => e.stopPropagation()}
                       >
                         {experience.company}
                       </a>
                     ) : (
-                      <span className="text-zinc-600 dark:text-zinc-400 font-medium">{experience.company}</span>
+                      <span className="text-blue-400 font-medium">{experience.company}</span>
                     )}
                   </div>
                   <div className="flex items-center gap-3 text-sm">
@@ -110,13 +110,13 @@ export default function Experience() {
                   {/* Key Achievements */}
                   <div className="mb-8">
                     <h4 className="text-white font-medium mb-3 flex items-center gap-2">
-                      <Trophy className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
+                      <Trophy className="w-4 h-4 text-blue-400" />
                       Key Achievements
                     </h4>
                     <ul className="space-y-2">
                       {experience.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-400 text-[15px] leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 dark:bg-zinc-400 mt-2 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
                           {achievement}
                         </li>
                       ))}
@@ -130,7 +130,7 @@ export default function Experience() {
                     {experience.skills.map((skill, i) => (
                       <span 
                         key={i}
-                        className="px-3 py-1.5 bg-slate-800/50 text-slate-300 rounded-md text-sm border border-slate-700/30 hover:border-zinc-500/30 hover:text-slate-200 transition-colors"
+                        className="px-3 py-1.5 bg-slate-800/50 text-slate-300 rounded-md text-sm border border-slate-700/30 hover:border-blue-500/30 hover:text-slate-200 transition-colors"
                       >
                         {skill}
                       </span>

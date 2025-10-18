@@ -111,12 +111,12 @@ export default function Projects() {
       {/* Category Filter - Mobile Friendly Horizontal Scroll */}
       <div className="relative mb-8">
         {/* Left Shadow Gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-slate-800/50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-slate-800/50 to-transparent z-10 pointer-events-none" />
         
         {/* Left Scroll Button - Hidden on mobile, show on larger screens */}
         <button
           onClick={() => handleScroll('left')}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-white dark:bg-slate-800 rounded-full text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors hidden sm:block shadow-md"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-slate-800 rounded-full text-slate-400 hover:text-white hover:bg-slate-700 transition-colors hidden sm:block"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -134,8 +134,8 @@ export default function Projects() {
               onClick={() => setSelectedCategory(category.id)}
               className={`
                 flex-shrink-0 px-4 py-2 rounded-lg transition-all text-sm font-medium whitespace-nowrap
-                ${selectedCategory === category.id
-                  ? 'bg-zinc-800 dark:bg-zinc-700 text-white shadow-lg'
+                ${selectedCategory === category.id 
+                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
                   : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'}
               `}
             >
@@ -145,12 +145,12 @@ export default function Projects() {
         </div>
         
         {/* Right Shadow Gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-slate-800/50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-slate-800/50 to-transparent z-10 pointer-events-none" />
         
         {/* Right Scroll Button - Hidden on mobile, show on larger screens */}
         <button
           onClick={() => handleScroll('right')}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-white dark:bg-slate-800 rounded-full text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors hidden sm:block shadow-md"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-1.5 bg-slate-800 rounded-full text-slate-400 hover:text-white hover:bg-slate-700 transition-colors hidden sm:block"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-4 h-4" />
@@ -161,7 +161,7 @@ export default function Projects() {
         {filteredProjects.map((project, index) => (
           <div 
             key={index} 
-            className="group bg-slate-900/50 rounded-xl border border-slate-800/50 overflow-hidden hover:border-zinc-500/30 transition-all duration-300"
+            className="group bg-slate-900/50 rounded-xl border border-slate-800/50 overflow-hidden hover:border-blue-500/30 transition-all duration-300"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-4">
               {/* Image Section - Fixed aspect ratio container */}
@@ -181,14 +181,14 @@ export default function Projects() {
                     <div className="flex items-center gap-2 mb-2">
                       <span className={`
                         px-2 py-1 text-xs font-medium rounded-full
-                        ${project.category === 'initiative'
-                          ? 'bg-zinc-500/20 text-zinc-300'
+                        ${project.category === 'initiative' 
+                          ? 'bg-blue-500/20 text-blue-300' 
                           : 'bg-purple-500/20 text-purple-300'}
                       `}>
                         {project.category === 'initiative' ? 'Personal Initiative' : 'Work Portfolio'}
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-slate-400 text-sm leading-relaxed">
