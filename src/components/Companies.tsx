@@ -52,9 +52,15 @@ export default function Companies() {
       className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" 
       id="companies"
     >
-      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-        Companies I've Worked With
-      </h2>
+      <div className="max-w-2xl mb-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
+          Companies I've Worked With
+          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
+        </h2>
+        <p className="text-slate-400 text-lg mt-4">
+          Organizations where I've contributed my skills and expertise.
+        </p>
+      </div>
 
       <div className="relative">
         {/* Scroll Left Button */}
@@ -78,30 +84,30 @@ export default function Companies() {
         >
           <div className="flex gap-6 px-12">
             {companies.map((company) => (
-              <div key={company.id} className="group bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-all duration-300 w-48">
+              <div key={company.id} className="group bg-slate-900/50 rounded-xl border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300 w-48">
                 <div className="p-6">
                   {/* Logo */}
                   <div className="flex justify-center mb-4">
-                    <div className="w-24 h-24 rounded-xl bg-white flex items-center justify-center p-4 transition-all duration-300">
-                      <img
-                        src={company.logo}
+                    <div className="w-24 h-24 rounded-2xl bg-white/10 flex items-center justify-center p-4 group-hover:bg-white/15 transition-all duration-300">
+                      <img 
+                        src={company.logo} 
                         alt={`${company.name} logo`}
-                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                   </div>
-
+                  
                   {/* Content Section */}
                   <div className="text-center">
-                    <h3 className="text-white font-bold text-lg mb-2 leading-tight">{company.name}</h3>
-                    <p className="text-neutral-400 text-[14px] mb-4 leading-relaxed">{company.description}</p>
+                    <h3 className="text-white font-semibold text-lg mb-2">{company.name}</h3>
+                    <p className="text-slate-400 text-sm mb-4">{company.description}</p>
                     {company.website && (
                       <div className="flex justify-center">
-                        <a
+                        <a 
                           href={company.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors"
+                          className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm transition-colors"
                         >
                           Visit Website
                           <ArrowUpRight className="w-4 h-4" />
