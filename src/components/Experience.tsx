@@ -16,11 +16,12 @@ export default function Experience() {
   };
 
   return (
-    <section className="section-padding bg-neutral-900" id="experience">
+    <section className="section-padding" id="experience">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12">
-          Work Experience
-        </h2>
+        <div className="bg-neutral-900 rounded-2xl p-8 sm:p-12 border border-neutral-800">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12">
+            Work Experience
+          </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((experience, index) => (
@@ -116,6 +117,7 @@ export default function Experience() {
               )}
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>
