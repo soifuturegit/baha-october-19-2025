@@ -20,7 +20,7 @@ export default function Impact() {
       <div className="max-w-2xl mb-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
           Impact & Volunteering
-          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
+          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-zinc-700 to-zinc-600 rounded-full opacity-50" />
         </h2>
         <p className="text-slate-400 text-lg mt-4">
           Creating positive change through technology and community engagement.
@@ -31,7 +31,7 @@ export default function Impact() {
         {volunteerExperiences.map((experience, index) => (
           <div 
             key={index}
-            className="bg-slate-900/50 rounded-lg border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300"
+            className="bg-slate-900/50 rounded-lg border border-slate-800/50 hover:border-zinc-500/30 transition-all duration-300"
           >
             {/* Header - Always Visible */}
             <button
@@ -39,15 +39,15 @@ export default function Impact() {
              className="w-full px-6 py-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4 text-left group/header"
             >
              <div className="flex items-start gap-5">
-               <div className="w-14 h-14 rounded-xl bg-slate-800/50 flex items-center justify-center flex-shrink-0 border border-slate-700/50 group-hover/header:border-blue-500/30 transition-colors">
-                  <Users className="w-6 h-6 text-blue-400" />
+               <div className="w-14 h-14 rounded-xl bg-slate-800/50 flex items-center justify-center flex-shrink-0 border border-slate-700/50 group-hover/header:border-zinc-500/30 transition-colors">
+                  <Users className="w-6 h-6 text-zinc-600 dark:text-zinc-400" />
                 </div>
                <div className="flex-1">
-                 <h3 className="text-xl font-semibold text-white group-hover/header:text-blue-400 transition-colors mb-1">
+                 <h3 className="text-xl font-semibold text-white group-hover/header:text-zinc-600 dark:text-zinc-400 transition-colors mb-1">
                     {experience.title}
                   </h3>
                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-blue-400">{experience.organization}</span>
+                    <span className="text-zinc-600 dark:text-zinc-400">{experience.organization}</span>
                    <span className="px-2 py-0.5 rounded-md text-xs font-medium bg-slate-800/50 text-slate-500 border border-slate-700/30">
                       Volunteer
                     </span>
@@ -80,16 +80,16 @@ export default function Impact() {
 
                      <div>
                         <h4 className="text-white font-medium mb-3 flex items-center gap-2">
-                          <Trophy className="w-4 h-4 text-blue-400" />
+                          <Trophy className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
                           Impact Highlights
                         </h4>
                         <ul className="space-y-2">
                          <li className="flex items-start gap-3 text-slate-400 text-[15px] leading-relaxed">
-                           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
+                           <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 dark:bg-zinc-400 mt-2 flex-shrink-0" />
                             Mentored 20+ students in programming fundamentals
                           </li>
                          <li className="flex items-start gap-3 text-slate-400 text-[15px] leading-relaxed">
-                           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
+                           <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 dark:bg-zinc-400 mt-2 flex-shrink-0" />
                             Increased student engagement by 40%
                           </li>
                         </ul>

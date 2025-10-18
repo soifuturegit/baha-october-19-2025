@@ -32,13 +32,13 @@ function AchievementModal({ achievement, onClose }: AchievementModalProps) {
         </div>
         <div className="p-6">
           <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">{achievement.title}</h3>
-          <p className="text-blue-400 mb-2">{achievement.organization}</p>
+          <p className="text-zinc-400 dark:text-zinc-300 mb-2">{achievement.organization}</p>
           <p className="text-slate-400 mb-4">{achievement.description}</p>
           <div className="flex justify-between items-center">
             <span className="text-slate-500">{achievement.date}</span>
             <button 
               onClick={onClose}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              className="px-4 py-2 bg-zinc-700 text-white rounded-lg hover:bg-zinc-600 transition-colors"
             >
               Close
             </button>
@@ -62,7 +62,7 @@ export default function Achievements() {
       <div className="max-w-2xl mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
           Achievements
-          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
+          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-zinc-700 to-zinc-600 rounded-full opacity-50" />
         </h2>
         <p className="text-base sm:text-lg text-slate-400 mt-4">
           A collection of professional accomplishments, certifications, and recognition received throughout my career journey.
@@ -77,7 +77,7 @@ export default function Achievements() {
             className={`
               flex items-center gap-2 px-4 sm:px-6 py-2 rounded-lg transition-all text-sm sm:text-base
               ${activeCategory === id 
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' 
+                ? 'bg-zinc-800 dark:bg-zinc-700 text-white shadow-lg' 
                 : 'text-slate-400 hover:text-white hover:bg-slate-800/50'}
             `}
           >
@@ -104,18 +104,18 @@ export default function Achievements() {
             </div>
             <div className="p-4">
               <div className="flex items-start gap-3">
-                <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                  <Award className="w-5 h-5 text-blue-400" />
+                <div className="p-2 bg-zinc-500/10 dark:bg-zinc-500/20 rounded-lg group-hover:bg-zinc-500/20 dark:group-hover:bg-zinc-500/30 transition-colors">
+                  <Award className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors line-clamp-1">
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors line-clamp-1">
                     {achievement.title}
                   </h3>
                   <p className="text-sm text-slate-400 line-clamp-2 mb-2">
                     {achievement.description}
                   </p>
                   <div className="flex justify-between items-center">
-                    <span className="text-blue-400 text-xs">Click to view details</span>
+                    <span className="text-zinc-500 dark:text-zinc-400 text-xs">Click to view details</span>
                     <span className="text-slate-500 text-xs">{achievement.date}</span>
                   </div>
                 </div>

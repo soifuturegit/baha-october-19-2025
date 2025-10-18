@@ -58,9 +58,9 @@ export default function References() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {references.map((reference, index) => (
-          <div key={index} className="bg-slate-900/50 rounded-lg p-6 border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300">
+          <div key={index} className="bg-slate-900/50 rounded-lg p-6 border border-slate-800/50 hover:border-zinc-500/30 transition-all duration-300">
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden border-2 border-blue-500/30">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden border-2 border-zinc-500/30">
                 <img
                   src={reference.image}
                   alt={reference.name}

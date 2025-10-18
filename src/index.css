@@ -355,4 +355,33 @@
   .light [class*="from-slate-800"] {
     --tw-gradient-from: rgb(255 255 255 / 0.8) var(--tw-gradient-from-position);
   }
+
+  /* Zinc Accent Colors for Light Mode */
+  .light .text-zinc-600 {
+    color: rgb(63 63 70);
+  }
+
+  .light .bg-zinc-700 {
+    background-color: rgb(39 39 42);
+  }
+
+  .light .bg-zinc-800 {
+    background-color: rgb(39 39 42);
+  }
+
+  .light .border-zinc-500\/30 {
+    border-color: rgb(161 161 170 / 0.3);
+  }
+
+  .light .hover\:border-zinc-500\/30:hover {
+    border-color: rgb(161 161 170 / 0.5);
+  }
+
+  .light .bg-zinc-500\/10 {
+    background-color: rgb(228 228 231);
+  }
+
+  .light .bg-zinc-500\/20 {
+    background-color: rgb(212 212 216);
+  }
 }

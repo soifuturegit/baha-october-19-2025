@@ -47,21 +47,21 @@ export default function SocialImpact() {
           return (
             <div 
               key={index}
-              className="bg-slate-900/50 rounded-lg p-6 border border-slate-800/50 hover:border-blue-500/30 transition-all group"
+              className="bg-slate-900/50 rounded-lg p-6 border border-slate-800/50 hover:border-zinc-500/30 transition-all group"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 rounded-lg bg-zinc-500/10 dark:bg-zinc-500/20 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-zinc-600 dark:text-zinc-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
                     {impact.title}
                   </h3>
                   <p className="text-slate-400 mb-4 leading-relaxed">
                     {impact.description}
                   </p>
-                  <div className="inline-block px-3 py-1 bg-blue-500/10 rounded-full">
-                    <span className="text-sm font-medium text-blue-400">
+                  <div className="inline-block px-3 py-1 bg-zinc-500/10 dark:bg-zinc-500/20 rounded-full">
+                    <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                       {impact.metric}
                     </span>
                   </div>

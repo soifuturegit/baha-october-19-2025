@@ -45,7 +45,7 @@ export default function BlogFilter({ selectedTags, onTagToggle }: BlogFilterProp
             className={`
               flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap
               ${selectedTags.length === 0
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                ? 'bg-zinc-800 dark:bg-zinc-700 text-white shadow-lg'
                 : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'}
             `}
           >
@@ -58,7 +58,7 @@ export default function BlogFilter({ selectedTags, onTagToggle }: BlogFilterProp
               className={`
                 flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap
                 ${selectedTags.includes(tag)
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                  ? 'bg-zinc-800 dark:bg-zinc-700 text-white shadow-lg'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50'}
               `}
             >
