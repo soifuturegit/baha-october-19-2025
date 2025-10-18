@@ -10,6 +10,7 @@ import Contact from '../components/Contact';
 import Gallery from '../components/Gallery';
 import Companies from '../components/Companies';
 import FounderFeedback from '../components/FounderFeedback';
+import References from '../components/References';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Gallery />
       <Companies />
       <FounderFeedback />
+      <References />
       <Impact />
       <Achievements />
       <SkillsAndInterests />
