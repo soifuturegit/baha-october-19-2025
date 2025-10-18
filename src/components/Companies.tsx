@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { companies } from '../data/companies';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Companies() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -82,19 +82,39 @@ export default function Companies() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
-          <div className="flex gap-8 px-12 items-center">
+          <div className="flex gap-6 px-12">
             {companies.map((company) => (
-              <div
-                key={company.id}
-                className="group flex-shrink-0 bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
-                style={{ width: '180px', height: '120px' }}
-              >
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
+              <div key={company.id} className="group bg-slate-900/50 rounded-xl border border-slate-800/50 hover:border-blue-500/30 transition-all duration-300 w-48">
+                <div className="p-6">
+                  {/* Logo */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-24 h-24 rounded-2xl bg-white/10 flex items-center justify-center p-4 group-hover:bg-white/15 transition-all duration-300">
+                      <img 
+                        src={company.logo} 
+                        alt={`${company.name} logo`}
+                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="text-center">
+                    <h3 className="text-white font-semibold text-lg mb-2">{company.name}</h3>
+                    <p className="text-slate-400 text-sm mb-4">{company.description}</p>
+                    {company.website && (
+                      <div className="flex justify-center">
+                        <a 
+                          href={company.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm transition-colors"
+                        >
+                          Visit Website
+                          <ArrowUpRight className="w-4 h-4" />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
