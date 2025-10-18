@@ -17,10 +17,9 @@ export default function Experience() {
 
   return (
     <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" id="experience">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
+      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
         Work Experience
       </h2>
-      <div className="h-1 w-20 bg-gradient-to-r from-emerald-400 to-blue-500 mb-8"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((experience, index) => (

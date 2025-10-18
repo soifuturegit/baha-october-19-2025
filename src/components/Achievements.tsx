@@ -60,9 +60,8 @@ export default function Achievements() {
   return (
     <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" id="achievements">
       <div className="max-w-2xl mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
           Achievements
-          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
         </h2>
         <p className="text-base sm:text-lg text-slate-400 mt-4">
           A collection of professional accomplishments, certifications, and recognition received throughout my career journey.
