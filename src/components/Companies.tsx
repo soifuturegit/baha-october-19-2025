@@ -53,8 +53,9 @@ export default function Companies() {
       id="companies"
     >
       <div className="max-w-2xl mb-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
           Companies I've Worked With
+          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
         </h2>
         <p className="text-slate-400 text-lg mt-4">
           Organizations where I've contributed my skills and expertise.
@@ -98,7 +99,7 @@ export default function Companies() {
                   
                   {/* Content Section */}
                   <div className="text-center">
-                    <h3 className="text-white font-semibold mb-2">{company.name}</h3>
+                    <h3 className="text-white font-semibold text-lg mb-2">{company.name}</h3>
                     <p className="text-slate-400 text-sm mb-4">{company.description}</p>
                     {company.website && (
                       <div className="flex justify-center">
