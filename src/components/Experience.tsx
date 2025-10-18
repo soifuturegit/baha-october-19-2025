@@ -47,7 +47,7 @@ export default function Experience() {
                     </p>
                     <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-500 uppercase tracking-wide">
                       <span>{experience.period}</span>
-                      <span className="w-1 h-1 rounded-full bg-neutral-600" />
+                      <span className="w-1 h-1 rounded-full bg-neutral-500" />
                       <span>{experience.location || 'Remote'}</span>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export default function Experience() {
                       <ul className="space-y-2.5">
                         {experience.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-3 text-neutral-400 text-[14px] leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 flex-shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                             <span>{achievement}</span>
                           </li>
                         ))}
