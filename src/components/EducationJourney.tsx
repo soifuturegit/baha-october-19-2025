@@ -87,34 +87,18 @@ export default function EducationJourney() {
       >
         <div className="p-6 sm:p-8 lg:p-12 pt-0 space-y-12">
           <div className="relative">
-            <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-emerald-500/50 via-teal-500/50 to-transparent"></div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8">Gap Years & Self-Learning</h3>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {timeline.map((item, index) => {
                 return (
-                  <div
-                    key={index}
-                    className="relative pl-6 group/item animate-fadeIn"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="relative bg-slate-800/50 rounded-xl p-6 sm:p-8 border border-slate-700/50 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300">
-                      <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white">
-                          {item.title}
-                        </h3>
-                        <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium rounded-full">
-                          {item.period}
-                        </span>
-                      </div>
-
-                      <p className="text-emerald-400 text-sm sm:text-base font-medium mb-4">
-                        {item.institution}
-                      </p>
-
-                      <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                        {item.description}
-                      </p>
+                  <div key={index} className="text-slate-300 leading-relaxed">
+                    <div className="flex flex-wrap items-baseline gap-2 mb-2">
+                      <h4 className="text-lg font-semibold text-white">{item.title}</h4>
+                      <span className="text-emerald-400 text-sm">({item.period})</span>
                     </div>
+                    <p className="text-sm text-slate-400 mb-2">{item.institution}</p>
+                    <p className="text-sm sm:text-base">{item.description}</p>
                   </div>
                 );
               })}
