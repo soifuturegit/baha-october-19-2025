@@ -25,7 +25,7 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 hover:scale-110 active:scale-95"
+        className="lg:hidden fixed bottom-6 right-6 z-50 p-3 bg-emerald-500 text-white rounded-xl shadow-lg hover:scale-110 transition-all duration-300 active:scale-95"
         aria-label="Toggle menu"
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -33,22 +33,22 @@ export default function Navbar() {
 
       {/* Navigation */}
       <nav className={`
-        fixed top-0 right-0 h-screen w-[240px] bg-slate-900/95 backdrop-blur-sm border-l border-slate-800/50 
+        fixed top-0 right-0 h-screen w-[240px] bg-neutral-950/95 backdrop-blur-sm border-l border-neutral-800
         flex flex-col z-40 transition-all duration-500 ease-in-out lg:translate-x-0 lg:left-0 lg:border-r
         ${isOpen ? 'translate-x-0 shadow-2xl' : 'translate-x-full lg:translate-x-0 lg:shadow-none'}
       `}>
         {/* Logo */}
-        <div className="p-6 border-b border-slate-800/50">
+        <div className="p-6 border-b border-neutral-800">
           <Link to="/" className="relative group inline-flex items-center" onClick={() => setIsOpen(false)}>
             <div className="flex items-center space-x-1.5">
-              <span className="text-lg font-bold text-blue-500 group-hover:text-blue-400 transition-all duration-300">
+              <span className="text-lg font-bold text-emerald-500 group-hover:text-emerald-400 transition-all duration-300">
                 Bahauddin
               </span>
-              <span className="text-lg font-light text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
+              <span className="text-lg font-light text-neutral-500 group-hover:text-neutral-400 transition-colors duration-300">
                 Chishte
               </span>
             </div>
-            <div className="absolute inset-0 -m-3 border border-slate-800 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100" />
+            <div className="absolute inset-0 -m-3 border border-neutral-800 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100" />
           </Link>
         </div>
 
@@ -70,31 +70,30 @@ export default function Navbar() {
                   href={item.href.startsWith('#') ? item.href : undefined}
                   onClick={() => setIsOpen(false)}
                   className={`
-                    relative group flex items-center gap-3 px-4 py-3 text-[14px] font-medium rounded-lg 
-                    hover:bg-slate-800/50 transition-all duration-300
-                    ${isActive ? 'bg-slate-800/50 border-slate-700/50' : ''}
+                    relative group flex items-center gap-3 px-4 py-3 text-[15px] font-medium rounded-xl
+                    hover:bg-neutral-900 transition-all duration-300
+                    ${isActive ? 'bg-neutral-900 border-neutral-800' : ''}
                   `}
                 >
                   <Icon className={`
                     w-5 h-5 transition-colors duration-300
-                    ${isActive ? 'text-blue-400' : 'text-slate-400 group-hover:text-blue-400'}
+                    ${isActive ? 'text-emerald-400' : 'text-neutral-400 group-hover:text-emerald-400'}
                   `} />
                   <span className={`
                     relative z-10 transition-colors duration-300
-                    ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-slate-200'}
+                    ${isActive ? 'text-white' : 'text-neutral-400 group-hover:text-neutral-200'}
                   `}>
                     {item.label}
                   </span>
                   <div className={`
-                    absolute inset-0 rounded-lg border transition-colors duration-300
-                    ${isActive ? 'border-slate-700/50' : 'border-transparent group-hover:border-slate-700/50'}
+                    absolute inset-0 rounded-xl border transition-colors duration-300
+                    ${isActive ? 'border-neutral-800' : 'border-transparent group-hover:border-neutral-800'}
                   `} />
                   <ChevronRight className={`
                     absolute right-3 w-4 h-4 transition-all duration-300
-                    ${isActive 
-                      ? 'opacity-100 translate-x-0 text-blue-400' 
-                      : 'opacity-0 -translate-x-2 text-slate-400 group-hover:opacity-100 group-hover:translate-x-0'
-                    }
+                    ${isActive
+                      ? 'opacity-100 translate-x-0 text-emerald-400'
+                      : 'opacity-0 -translate-x-2 text-neutral-400 group-hover:opacity-100 group-hover:translate-x-0'}
                   `} />
                 </NavLink>
               );
@@ -103,8 +102,8 @@ export default function Navbar() {
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-slate-800/50">
-          <p className="text-sm text-slate-500 text-center">
+        <div className="p-6 border-t border-neutral-800">
+          <p className="text-[15px] text-neutral-500 text-center">
             © {new Date().getFullYear()} All rights reserved
           </p>
         </div>
