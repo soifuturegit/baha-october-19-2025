@@ -9,9 +9,8 @@ export default function FounderFeedback() {
       id="founder-feedback"
     >
       <div className="max-w-2xl mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
           What Founders Say About Me
-          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
         </h2>
         <p className="text-slate-400 text-lg mt-4">
           Real feedback from founders and business leaders I've worked with.
