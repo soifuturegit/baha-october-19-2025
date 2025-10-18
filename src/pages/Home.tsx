@@ -4,7 +4,7 @@ import EducationJourney from '../components/EducationJourney';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Achievements from '../components/Achievements';
-import Interests from '../components/Interests';
+import SkillsAndInterests from '../components/SkillsAndInterests';
 import Impact from '../components/Impact';
 import Contact from '../components/Contact';
 import Gallery from '../components/Gallery';
@@ -23,7 +23,7 @@ export default function Home() {
       <FounderFeedback />
       <Impact />
       <Achievements />
-      <Interests />
+      <SkillsAndInterests />
       <Contact />
     </div>
   );
