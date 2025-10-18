@@ -145,14 +145,9 @@ export default function Gallery() {
 
   return (
     <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50 w-full" id="gallery">
-      <div className="max-w-2xl mb-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-          Gallery
-        </h2>
-        <p className="text-slate-400 text-lg mt-4">
-          A visual journey of my work, teaching, and collaborative experiences.
-        </p>
-      </div>
+      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+        Gallery
+      </h2>
       
       {/* Category Filter */}
       <div className="flex flex-wrap gap-2 p-1.5 bg-slate-900/50 rounded-xl mb-8">
@@ -192,19 +187,19 @@ export default function Gallery() {
             {imageRows.map((row, rowIndex) => (
               <div key={`row-${rowIndex}`} className="flex flex-col gap-4">
                 {row.map((image) => (
-                  <div 
+                  <div
                     key={image.id}
-                    className="w-64 h-48 relative overflow-hidden rounded-lg group cursor-pointer"
+                    className="w-64 h-48 relative overflow-hidden rounded-2xl border border-neutral-800 hover:border-neutral-700 group cursor-pointer transition-all duration-300 bg-neutral-950"
                     onClick={() => setSelectedImage(image)}
                   >
-                    <img 
-                      src={image.thumbnail} 
+                    <img
+                      src={image.thumbnail}
                       alt={image.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <h3 className="text-white font-medium text-sm line-clamp-1">{image.title}</h3>
-                      <p className="text-slate-300 text-xs line-clamp-1">{image.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <h3 className="text-white font-bold text-sm line-clamp-1">{image.title}</h3>
+                      <p className="text-neutral-400 text-xs line-clamp-1">{image.description}</p>
                     </div>
                   </div>
                 ))}
