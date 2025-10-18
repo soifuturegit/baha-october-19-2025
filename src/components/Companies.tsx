@@ -101,7 +101,6 @@ export default function Companies() {
                   <div className="text-center">
                     <h3 className="text-white font-semibold text-lg mb-2">{company.name}</h3>
                     <p className="text-slate-400 text-sm mb-4">{company.description}</p>
-                    
                     {company.website && (
                       <div className="flex justify-center">
                         <a 
