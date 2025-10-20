@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, Menu, X, GraduationCap, ChevronRight, Image, Building2, MessageSquare, FileText } from 'lucide-react';
+import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, GraduationCap, ChevronRight, Image, Building2, MessageSquare, FileText } from 'lucide-react';
 import { useActiveSection } from '../hooks/useActiveSection';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const activeSection = useActiveSection();
 
   const navItems = [
@@ -24,18 +23,16 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Mobile Menu Button - Top Right */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-6 right-6 z-50 p-3 bg-emerald-500 text-white rounded-xl shadow-lg hover:scale-110 transition-all duration-300 active:scale-95"
-        aria-label="Toggle menu"
-      >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
-
       {/* Mobile Bottom Navigation - Horizontal Scroll */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-neutral-950/95 backdrop-blur-sm border-t border-emerald-500/30 overflow-x-auto hide-scrollbar pb-safe">
-        <div className="flex gap-2 p-3 min-w-max">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-neutral-950/95 backdrop-blur-sm border-t border-emerald-500/30 pb-safe">
+        <div className="relative">
+          {/* Scroll indicator - left side */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-neutral-950 to-transparent z-10 flex items-center justify-start pl-2 pointer-events-none">
+            <ChevronRight className="w-5 h-5 text-emerald-400 animate-pulse" />
+          </div>
+
+          {/* Scrollable nav items */}
+          <div className="flex gap-2 p-3 min-w-max overflow-x-auto hide-scrollbar">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = item.href === '/'
@@ -77,6 +74,7 @@ export default function Navbar() {
               </NavLink>
             );
           })}
+          </div>
         </div>
       </nav>
 
@@ -166,14 +164,6 @@ export default function Navbar() {
           </p>
         </div>
       </nav>
-
-      {/* Overlay for mobile menu */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-500"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
     </>
   );
 }
