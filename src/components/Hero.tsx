@@ -41,10 +41,14 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex-shrink-0 relative group perspective-1000">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex-shrink-0 relative group" style={{ padding: '0 16px' }}>
                 {personalInfo.images.map((image, index) => {
                   const position = (index - currentImageIndex + personalInfo.images.length) % personalInfo.images.length;
                   const isVisible = position < 3;
+
+                  let translateX = 0;
+                  if (position === 1) translateX = -12;
+                  if (position === 2) translateX = 12;
 
                   return (
                     <div
@@ -53,12 +57,12 @@ export default function Hero() {
                         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
                       }`}
                       style={{
-                        transform: `translateY(${position * 8}px) translateX(${position * 8}px) scale(${1 - position * 0.05})`,
+                        transform: `translateX(${translateX}px) translateY(${position * 6}px) scale(${1 - position * 0.05}) rotate(${position === 1 ? -3 : position === 2 ? 3 : 0}deg)`,
                         zIndex: 10 - position,
                       }}
                       onClick={nextImage}
                     >
-                      <div className="w-full h-full rounded-2xl overflow-hidden ring-2 ring-slate-500/20 bg-slate-700">
+                      <div className="w-full h-full rounded-2xl overflow-hidden ring-2 ring-slate-500/20 bg-slate-700 shadow-xl">
                         <img
                           src={image}
                           alt={`${personalInfo.name} ${index + 1}`}
