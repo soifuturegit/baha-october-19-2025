@@ -87,7 +87,6 @@ export default function EducationJourney() {
       >
         <div className="p-6 sm:p-8 lg:p-12 pt-0 space-y-12">
           <div className="relative">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8">School</h3>
 
             <div className="space-y-6">
               {timeline.map((item, index) => {
