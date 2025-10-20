@@ -53,10 +53,24 @@ export default function Achievements() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedAchievement, setSelectedAchievement] = useState<typeof achievements[0] | null>(null);
   const [isOpen, setIsOpen] = useState(true);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
 
   const filteredAchievements = achievements.filter(
     item => activeCategory === 'all' || item.category === activeCategory
   );
+
+  const toggleExpand = (index: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setExpandedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
 
   return (
     <section className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-2xl border border-emerald-500/30 overflow-hidden" id="achievements">
@@ -108,41 +122,51 @@ export default function Achievements() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredAchievements.map((achievement, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedAchievement(achievement)}
-            className="text-left bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800 hover:border-neutral-700 transition-all duration-300 group"
-          >
-            <div className="relative aspect-video overflow-hidden">
-              <img
-                src={achievement.image}
-                alt={achievement.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent" />
-            </div>
-            <div className="p-4">
-              <div className="flex items-start gap-3">
-                <div className="p-2 bg-white rounded-lg transition-colors">
-                  <Award className="w-5 h-5 text-emerald-500" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-bold text-white mb-2 transition-colors line-clamp-1 leading-tight">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-[13px] text-neutral-400 line-clamp-2 mb-2 leading-relaxed">
-                    {achievement.description}
-                  </p>
-                  <div className="flex justify-between items-center gap-2">
-                    <span className="text-emerald-400 text-[11px] font-medium uppercase tracking-wide">View Details</span>
-                    <span className="text-neutral-500 text-[11px] uppercase tracking-wide">{achievement.date}</span>
+        {filteredAchievements.map((achievement, index) => {
+          const isExpanded = expandedCards.has(index);
+          return (
+            <div
+              key={index}
+              className="text-left bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800 hover:border-neutral-700 transition-all duration-300 group"
+            >
+              <button
+                onClick={() => setSelectedAchievement(achievement)}
+                className="relative aspect-video overflow-hidden w-full"
+              >
+                <img
+                  src={achievement.image}
+                  alt={achievement.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent" />
+              </button>
+              <div className="p-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-white rounded-lg transition-colors">
+                    <Award className="w-5 h-5 text-emerald-500" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-2 transition-colors line-clamp-1 leading-tight">
+                      {achievement.title}
+                    </h3>
+                    <p className={`text-[13px] text-neutral-400 mb-2 leading-relaxed ${isExpanded ? '' : 'line-clamp-2'}`}>
+                      {achievement.description}
+                    </p>
+                    <div className="flex justify-between items-center gap-2">
+                      <button
+                        onClick={(e) => toggleExpand(index, e)}
+                        className="text-emerald-400 text-[11px] font-medium uppercase tracking-wide hover:text-emerald-300 transition-colors"
+                      >
+                        {isExpanded ? 'Show Less' : 'Read More'}
+                      </button>
+                      <span className="text-neutral-500 text-[11px] uppercase tracking-wide">{achievement.date}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </button>
-        ))}
+          );
+        })}
       </div>
 
       {selectedAchievement && (
