@@ -14,7 +14,7 @@ import References from '../components/References';
 
 export default function Home() {
   return (
-    <div className="space-y-8 w-full overflow-hidden">
+    <div className="space-y-8 w-full overflow-hidden pb-24 lg:pb-0">
       <Hero />
       <EducationJourney />
       <Experience />

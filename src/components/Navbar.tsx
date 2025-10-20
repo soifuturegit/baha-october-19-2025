@@ -24,24 +24,71 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Button - Top Right */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 p-3 bg-emerald-500 text-white rounded-xl shadow-lg hover:scale-110 transition-all duration-300 active:scale-95"
+        className="lg:hidden fixed top-6 right-6 z-50 p-3 bg-emerald-500 text-white rounded-xl shadow-lg hover:scale-110 transition-all duration-300 active:scale-95"
         aria-label="Toggle menu"
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      {/* Navigation */}
+      {/* Mobile Bottom Navigation - Horizontal Scroll */}
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-neutral-950/95 backdrop-blur-sm border-t border-emerald-500/30 overflow-x-auto hide-scrollbar pb-safe">
+        <div className="flex gap-2 p-3 min-w-max">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = item.href === '/'
+              ? location.pathname === '/' && !activeSection
+              : item.href.startsWith('#')
+                ? activeSection === item.href.slice(1)
+                : location.pathname === item.href;
+
+            const NavLink = item.href.startsWith('#') ? 'a' : Link;
+
+            const handleClick = (e: React.MouseEvent) => {
+              if (item.href === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            };
+
+            return (
+              <NavLink
+                key={item.label}
+                to={item.href.startsWith('#') ? undefined : item.href}
+                href={item.href.startsWith('#') ? item.href : undefined}
+                onClick={handleClick}
+                className={`
+                  flex flex-col items-center gap-1 px-4 py-2 rounded-xl min-w-[80px] transition-all duration-300
+                  ${isActive ? 'bg-emerald-500/20 border border-emerald-500/30' : 'hover:bg-neutral-900'}
+                `}
+              >
+                <Icon className={`
+                  w-5 h-5 transition-colors duration-300
+                  ${isActive ? 'text-emerald-400' : 'text-neutral-400'}
+                `} />
+                <span className={`
+                  text-xs font-medium whitespace-nowrap transition-colors duration-300
+                  ${isActive ? 'text-white' : 'text-neutral-400'}
+                `}>
+                  {item.label}
+                </span>
+              </NavLink>
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Desktop Sidebar Navigation */}
       <nav className={`
-        fixed top-0 right-0 h-screen w-[240px] bg-neutral-950/95 backdrop-blur-sm border-l border-emerald-500/30
-        flex flex-col z-40 transition-all duration-500 ease-in-out lg:translate-x-0 lg:left-0 lg:border-r
-        ${isOpen ? 'translate-x-0 shadow-2xl' : 'translate-x-full lg:translate-x-0 lg:shadow-none'}
+        hidden lg:flex
+        fixed top-0 left-0 h-screen w-[240px] bg-neutral-950/95 backdrop-blur-sm border-r border-emerald-500/30
+        flex-col z-40
       `}>
         {/* Logo */}
         <div className="p-6 border-b border-emerald-500/30">
-          <Link to="/" className="relative group inline-flex items-center" onClick={() => setIsOpen(false)}>
+          <Link to="/" className="relative group inline-flex items-center">
             <div className="flex items-center space-x-1.5">
               <span className="text-lg font-bold text-emerald-500 group-hover:text-emerald-400 transition-all duration-300">
                 Bahauddin
@@ -68,7 +115,6 @@ export default function Navbar() {
               const NavLink = item.href.startsWith('#') ? 'a' : Link;
 
               const handleClick = (e: React.MouseEvent) => {
-                setIsOpen(false);
                 if (item.href === '/') {
                   e.preventDefault();
                   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -121,7 +167,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Overlay */}
+      {/* Overlay for mobile menu */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-500"
