@@ -26,8 +26,8 @@ export default function Navbar() {
       {/* Mobile Bottom Navigation - Horizontal Scroll */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-neutral-950/95 backdrop-blur-sm border-t border-emerald-500/30 pb-safe">
         <div className="relative">
-          {/* Scroll indicator - left side */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-neutral-950 to-transparent z-10 flex items-center justify-start pl-2 pointer-events-none">
+          {/* Scroll indicator - right side */}
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-neutral-950 to-transparent z-10 flex items-center justify-end pr-2 pointer-events-none">
             <ChevronRight className="w-5 h-5 text-emerald-400 animate-pulse" />
           </div>
 
