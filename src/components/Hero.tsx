@@ -41,39 +41,49 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex-shrink-0 relative group">
-                <div className="w-full h-full rounded-2xl overflow-hidden relative ring-2 ring-slate-500/20">
-                  <img
-                    src={personalInfo.images[currentImageIndex]}
-                    alt={personalInfo.name}
-                    className="w-full h-full object-cover object-center cursor-pointer transition-transform duration-300 group-hover:scale-105"
-                    onClick={nextImage}
-                  />
+              <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex-shrink-0 relative group perspective-1000">
+                {personalInfo.images.map((image, index) => {
+                  const position = (index - currentImageIndex + personalInfo.images.length) % personalInfo.images.length;
+                  const isVisible = position < 3;
 
-                  <div className="absolute inset-0 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                      className="p-1.5 bg-black/50 text-white rounded-full ml-2 hover:bg-black/70 transition-colors"
-                      aria-label="Previous image"
+                  return (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer ${
+                        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                      }`}
+                      style={{
+                        transform: `translateY(${position * 8}px) translateX(${position * 8}px) scale(${1 - position * 0.05})`,
+                        zIndex: 10 - position,
+                      }}
+                      onClick={nextImage}
                     >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                      className="p-1.5 bg-black/50 text-white rounded-full mr-2 hover:bg-black/70 transition-colors"
-                      aria-label="Next image"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
+                      <div className="w-full h-full rounded-2xl overflow-hidden ring-2 ring-slate-500/20 bg-slate-700">
+                        <img
+                          src={image}
+                          alt={`${personalInfo.name} ${index + 1}`}
+                          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <img
-                      src={personalInfo.images[(currentImageIndex + 1) % personalInfo.images.length]}
-                      alt="Next"
-                      className="absolute right-0 top-0 w-1/4 h-1/4 object-cover rounded-lg transform translate-x-1/2 -translate-y-1/2 border-2 border-white/20"
-                    />
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                    className="p-1.5 bg-black/50 text-white rounded-full ml-2 hover:bg-black/70 transition-colors pointer-events-auto"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                    className="p-1.5 bg-black/50 text-white rounded-full mr-2 hover:bg-black/70 transition-colors pointer-events-auto"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>
