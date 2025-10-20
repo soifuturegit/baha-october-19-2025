@@ -33,12 +33,12 @@ export default function Navbar() {
 
       {/* Navigation */}
       <nav className={`
-        fixed top-0 right-0 h-screen w-[240px] bg-neutral-950/95 backdrop-blur-sm border-l border-neutral-800
+        fixed top-0 right-0 h-screen w-[240px] bg-neutral-950/95 backdrop-blur-sm border-l border-emerald-500/30
         flex flex-col z-40 transition-all duration-500 ease-in-out lg:translate-x-0 lg:left-0 lg:border-r
         ${isOpen ? 'translate-x-0 shadow-2xl' : 'translate-x-full lg:translate-x-0 lg:shadow-none'}
       `}>
         {/* Logo */}
-        <div className="p-6 border-b border-neutral-800">
+        <div className="p-6 border-b border-emerald-500/30">
           <Link to="/" className="relative group inline-flex items-center" onClick={() => setIsOpen(false)}>
             <div className="flex items-center space-x-1.5">
               <span className="text-lg font-bold text-emerald-500 group-hover:text-emerald-400 transition-all duration-300">
@@ -112,7 +112,7 @@ export default function Navbar() {
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-neutral-800">
+        <div className="p-6 border-t border-emerald-500/30">
           <p className="text-[15px] text-neutral-500 text-center">
             © {new Date().getFullYear()} All rights reserved
           </p>
