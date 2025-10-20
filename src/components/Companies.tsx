@@ -6,7 +6,7 @@ export default function Companies() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const animationRef = useRef<number | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const scrollAmount = 1; // Pixels to scroll per frame
   
   const handleScroll = (direction: 'left' | 'right') => {

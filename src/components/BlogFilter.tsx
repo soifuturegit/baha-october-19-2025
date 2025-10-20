@@ -23,12 +23,12 @@ export default function BlogFilter({ selectedTags, onTagToggle }: BlogFilterProp
     <div className="sticky top-16 z-30 bg-neutral-950/95 backdrop-blur-sm py-4 border-b border-neutral-800">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
         {/* Left Shadow Gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-neutral-950/95 to-transparent z-10 pointer-events-none" />
-        
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-neutral-950/95 to-transparent z-10 pointer-events-none hidden sm:block" />
+
         {/* Left Scroll Button */}
         <button
           onClick={() => scroll('left')}
-          className="absolute left-2 z-20 p-2 bg-white rounded-xl hover:scale-105 transition-transform"
+          className="absolute left-2 z-20 p-2 bg-white rounded-xl hover:scale-105 transition-transform hidden sm:block"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-4 h-4 text-neutral-900" />
@@ -37,7 +37,7 @@ export default function BlogFilter({ selectedTags, onTagToggle }: BlogFilterProp
         {/* Tags Container */}
         <div
           ref={scrollContainerRef}
-          className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth mx-12"
+          className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth sm:mx-12"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <button
@@ -68,12 +68,12 @@ export default function BlogFilter({ selectedTags, onTagToggle }: BlogFilterProp
         </div>
 
         {/* Right Shadow Gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-neutral-950/95 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-neutral-950/95 to-transparent z-10 pointer-events-none hidden sm:block" />
 
         {/* Right Scroll Button */}
         <button
           onClick={() => scroll('right')}
-          className="absolute right-2 z-20 p-2 bg-white rounded-xl hover:scale-105 transition-transform"
+          className="absolute right-2 z-20 p-2 bg-white rounded-xl hover:scale-105 transition-transform hidden sm:block"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-4 h-4 text-neutral-900" />

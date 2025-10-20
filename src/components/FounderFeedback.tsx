@@ -3,7 +3,7 @@ import { Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { founderFeedback } from '../data/founder-feedback';
 
 export default function FounderFeedback() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <section

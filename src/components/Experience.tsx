@@ -4,7 +4,7 @@ import { Plus, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Experience() {
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleExpand = (index: number) => {
     setExpandedIds(prev => {

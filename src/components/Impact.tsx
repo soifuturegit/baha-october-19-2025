@@ -4,7 +4,7 @@ import { volunteerExperiences } from '../data';
 
 export default function Impact() {
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleExpand = (index: number) => {
     setExpandedIds(prev => {

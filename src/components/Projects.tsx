@@ -77,7 +77,7 @@ const categories = [
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'all') {

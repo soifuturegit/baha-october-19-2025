@@ -52,7 +52,7 @@ function AchievementModal({ achievement, onClose }: AchievementModalProps) {
 export default function Achievements() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedAchievement, setSelectedAchievement] = useState<typeof achievements[0] | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const filteredAchievements = achievements.filter(
     item => activeCategory === 'all' || item.category === activeCategory
