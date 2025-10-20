@@ -4,15 +4,14 @@
 
 :root {
   /* ===== DESIGN SYSTEM CONFIGURATION ===== */
-  /* Default: Dark Mode */
 
-  /* Background Colors - Dark Mode */
+  /* Background Colors */
   --bg-primary: 217 33% 17%;
   --bg-secondary: 217 33% 10%;
   --bg-card: 217 33% 13%;
   --bg-card-hover: 217 33% 15%;
 
-  /* Text Colors - Dark Mode */
+  /* Text Colors */
   --text-primary: 215 20% 89%;
   --text-secondary: 215 16% 65%;
   --text-muted: 215 16% 50%;
@@ -28,7 +27,7 @@
   --gradient-via: 199 89% 48%;
   --gradient-to: 173 80% 40%;
 
-  /* Border Colors - Dark Mode */
+  /* Border Colors */
   --border-default: 217 33% 23%;
   --border-hover: 217 91% 60%;
   --border-focus: 217 91% 60%;
@@ -84,36 +83,6 @@
   --z-modal: 40;
   --z-popover: 50;
   --z-tooltip: 60;
-}
-
-/* ===== LIGHT MODE THEME ===== */
-[data-theme="light"] {
-  /* Background Colors - Light Mode */
-  --bg-primary: 0 0% 98%;
-  --bg-secondary: 0 0% 100%;
-  --bg-card: 0 0% 97%;
-  --bg-card-hover: 220 13% 95%;
-
-  /* Text Colors - Light Mode */
-  --text-primary: 217 33% 17%;
-  --text-secondary: 215 16% 35%;
-  --text-muted: 215 16% 50%;
-  --text-heading: 217 33% 10%;
-
-  /* Accent Colors - Light Mode (slightly adjusted for better visibility) */
-  --accent-primary: 217 91% 50%;
-  --accent-secondary: 199 89% 40%;
-  --accent-tertiary: 173 80% 35%;
-
-  /* Gradient Colors - Light Mode */
-  --gradient-from: 217 91% 50%;
-  --gradient-via: 199 89% 40%;
-  --gradient-to: 173 80% 35%;
-
-  /* Border Colors - Light Mode */
-  --border-default: 220 13% 91%;
-  --border-hover: 217 91% 50%;
-  --border-focus: 217 91% 50%;
 }
 
 @layer base {
