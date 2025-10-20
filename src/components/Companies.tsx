@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { companies } from '../data/companies';
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Companies() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const animationRef = useRef<number | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
   const scrollAmount = 1; // Pixels to scroll per frame
   
   const handleScroll = (direction: 'left' | 'right') => {
@@ -48,19 +49,38 @@ export default function Companies() {
   }, [isPaused]);
 
   return (
-    <section 
-      className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" 
+    <section
+      className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden"
       id="companies"
     >
-      <div className="max-w-2xl mb-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 relative inline-block">
-          Companies I've Worked With
-          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full opacity-50" />
-        </h2>
-        <p className="text-slate-400 text-lg mt-4">
-          Organizations where I've contributed my skills and expertise.
-        </p>
-      </div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
+      >
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-3">
+            Companies I've Worked With
+          </h2>
+          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+            Organizations where I've contributed my skills and expertise
+          </p>
+        </div>
+        <div className="p-2.5 rounded-xl group-hover:bg-slate-700/50 transition-all duration-300 ml-4">
+          {isOpen ? (
+            <ChevronUp className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+          ) : (
+            <ChevronDown className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+          )}
+        </div>
+      </button>
+
+      <div
+        className={`
+          overflow-hidden transition-all duration-500 ease-in-out
+          ${isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}
+        `}
+      >
+        <div className="p-6 sm:p-8 lg:p-12 pt-0 space-y-8">
 
       <div className="relative">
         {/* Scroll Left Button */}
@@ -129,6 +149,8 @@ export default function Companies() {
         >
           <ChevronRight className="w-5 h-5" />
         </button>
+      </div>
+        </div>
       </div>
     </section>
   );

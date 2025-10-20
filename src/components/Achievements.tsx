@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, GraduationCap, Trophy } from 'lucide-react';
+import { Award, GraduationCap, Trophy, ChevronDown, ChevronUp } from 'lucide-react';
 import { achievements } from '../data';
 
 const categories = [
@@ -52,16 +52,42 @@ function AchievementModal({ achievement, onClose }: AchievementModalProps) {
 export default function Achievements() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedAchievement, setSelectedAchievement] = useState<typeof achievements[0] | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const filteredAchievements = achievements.filter(
     item => activeCategory === 'all' || item.category === activeCategory
   );
 
   return (
-    <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" id="achievements">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-        Achievements
-      </h2>
+    <section className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden" id="achievements">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
+      >
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-3">
+            Achievements
+          </h2>
+          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+            Certificates, awards, and accomplishments throughout my journey
+          </p>
+        </div>
+        <div className="p-2.5 rounded-xl group-hover:bg-slate-700/50 transition-all duration-300 ml-4">
+          {isOpen ? (
+            <ChevronUp className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+          ) : (
+            <ChevronDown className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+          )}
+        </div>
+      </button>
+
+      <div
+        className={`
+          overflow-hidden transition-all duration-500 ease-in-out
+          ${isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}
+        `}
+      >
+        <div className="p-6 sm:p-8 lg:p-12 pt-0 space-y-8">
       
       <div className="flex flex-wrap gap-2 p-1.5 bg-slate-900/50 rounded-xl mb-8">
         {categories.map(({ id, label, icon: Icon }) => (
@@ -120,11 +146,13 @@ export default function Achievements() {
       </div>
 
       {selectedAchievement && (
-        <AchievementModal 
-          achievement={selectedAchievement} 
-          onClose={() => setSelectedAchievement(null)} 
+        <AchievementModal
+          achievement={selectedAchievement}
+          onClose={() => setSelectedAchievement(null)}
         />
       )}
+        </div>
+      </div>
     </section>
   );
 }
