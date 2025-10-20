@@ -6,18 +6,18 @@ const timeline = [
     title: "Independent Study",
     institution: "Coursera, EDx, LinkedIn & YT",
     period: "Mar 2022 – Present",
-    description: "Web Dev, AI, Entrepreneurship, Digital Business",
+    description: " Utilized this time to learn programming, build projects, and create social impact through technology initiatives. Completed various online courses in computer science and web development, AI, Entrepreneurship, Digital Business",
     gradient: "from-emerald-500 to-teal-500"
   },
   {
-    title: "HSC",
+    title: "Higher Secondary School Certificate (HSC/Grade 12)",
     institution: "Govt. Tolaram College | Chashara, Narayanganj",
     period: "Jul 2019 – Feb 2022",
     description: "Group: Science | GPA: 4.92 / 5.00",
     gradient: "from-blue-500 to-cyan-500"
   },
   {
-    title: "SSC",
+    title: "Secondaey School Certificate (SSC/Grade 10)",
     institution: "Moshang High School | Moshang, Wazirpur, Barishal",
     period: "Jan 2014 – Mar 2019",
     description: "Group: Science | GPA: 4.83 / 5.00",
