@@ -7,7 +7,7 @@ export default function FounderFeedback() {
 
   return (
     <section
-      className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden"
+      className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-2xl border border-emerald-500/30 overflow-hidden"
       id="founder-feedback"
     >
       <button
