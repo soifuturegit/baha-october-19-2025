@@ -64,7 +64,7 @@ export default function EducationJourney() {
       >
         <div className="flex-1">
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-3">
-            Education / Certification
+            Education & Certification
           </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
             A unique path of self-directed learning, formal education, and continuous growth
