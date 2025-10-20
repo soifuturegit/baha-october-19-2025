@@ -1,16 +1,42 @@
 export const themeConfig = {
   colors: {
-    background: {
-      primary: '217 33% 17%',
-      secondary: '217 33% 10%',
-      card: '217 33% 13%',
-      cardHover: '217 33% 15%',
+    dark: {
+      background: {
+        primary: '217 33% 17%',
+        secondary: '217 33% 10%',
+        card: '217 33% 13%',
+        cardHover: '217 33% 15%',
+      },
+      text: {
+        primary: '215 20% 89%',
+        secondary: '215 16% 65%',
+        muted: '215 16% 50%',
+        heading: '0 0% 100%',
+      },
+      border: {
+        default: '217 33% 23%',
+        hover: '217 91% 60%',
+        focus: '217 91% 60%',
+      },
     },
-    text: {
-      primary: '215 20% 89%',
-      secondary: '215 16% 65%',
-      muted: '215 16% 50%',
-      heading: '0 0% 100%',
+    light: {
+      background: {
+        primary: '0 0% 98%',
+        secondary: '0 0% 100%',
+        card: '0 0% 97%',
+        cardHover: '220 13% 95%',
+      },
+      text: {
+        primary: '217 33% 17%',
+        secondary: '215 16% 35%',
+        muted: '215 16% 50%',
+        heading: '217 33% 10%',
+      },
+      border: {
+        default: '220 13% 91%',
+        hover: '217 91% 50%',
+        focus: '217 91% 50%',
+      },
     },
     accent: {
       primary: '217 91% 60%',
@@ -21,11 +47,6 @@ export const themeConfig = {
       from: '217 91% 60%',
       via: '199 89% 48%',
       to: '173 80% 40%',
-    },
-    border: {
-      default: '217 33% 23%',
-      hover: '217 91% 60%',
-      focus: '217 91% 60%',
     },
   },
   typography: {

@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, GraduationCap, ChevronRight, Image, Building2, MessageSquare, FileText } from 'lucide-react';
+import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, GraduationCap, ChevronRight, Image, Building2, MessageSquare, FileText, Sun, Moon } from 'lucide-react';
 import { useActiveSection } from '../hooks/useActiveSection';
+import { useTheme } from '../contexts/ThemeContext';
 
 export default function Navbar() {
   const activeSection = useActiveSection();
   const mobileNavRef = useRef<HTMLDivElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { label: 'Home', href: '/', icon: Home },
@@ -102,6 +104,29 @@ export default function Navbar() {
               </NavLink>
             );
           })}
+
+          {/* Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            className="flex flex-col items-center gap-1 px-4 py-2 rounded-xl min-w-[80px] flex-shrink-0 hover:bg-neutral-900 transition-all duration-300 border border-transparent hover:border-emerald-500/30"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <>
+                <Moon className="w-5 h-5 text-neutral-400 transition-colors duration-300" />
+                <span className="text-xs font-medium whitespace-nowrap text-neutral-400 transition-colors duration-300">
+                  Dark
+                </span>
+              </>
+            ) : (
+              <>
+                <Sun className="w-5 h-5 text-neutral-400 transition-colors duration-300" />
+                <span className="text-xs font-medium whitespace-nowrap text-neutral-400 transition-colors duration-300">
+                  Light
+                </span>
+              </>
+            )}
+          </button>
           </div>
         </div>
       </nav>
@@ -186,7 +211,28 @@ export default function Navbar() {
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-emerald-500/30">
+        <div className="p-6 border-t border-emerald-500/30 space-y-4">
+          <button
+            onClick={toggleTheme}
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-emerald-500/30 transition-all duration-300 group"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <>
+                <Moon className="w-5 h-5 text-neutral-400 group-hover:text-emerald-400 transition-colors duration-300" />
+                <span className="text-[15px] font-medium text-neutral-400 group-hover:text-neutral-200 transition-colors duration-300">
+                  Dark Mode
+                </span>
+              </>
+            ) : (
+              <>
+                <Sun className="w-5 h-5 text-neutral-400 group-hover:text-emerald-400 transition-colors duration-300" />
+                <span className="text-[15px] font-medium text-neutral-400 group-hover:text-neutral-200 transition-colors duration-300">
+                  Light Mode
+                </span>
+              </>
+            )}
+          </button>
           <p className="text-[15px] text-neutral-500 text-center">
             © {new Date().getFullYear()} All rights reserved
           </p>
