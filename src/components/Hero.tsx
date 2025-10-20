@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section id="hero">
       <div className="w-full">
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50">
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-emerald-500/30">
           <div className="p-6 sm:p-8 lg:p-12">
             <div className="flex flex-col-reverse sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
               <div className="flex-1 space-y-4 sm:space-y-6 text-center sm:text-left">
@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50 mt-8">
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-emerald-500/30 mt-8">
           <div className="p-6 sm:p-8 lg:p-12">
             <div className="flex items-center gap-2 mb-6">
               <span className="text-lg sm:text-xl font-semibold text-white">A little more about me</span>

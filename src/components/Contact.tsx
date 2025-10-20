@@ -4,7 +4,7 @@ import { personalInfo } from '../data';
 
 export default function Contact() {
   return (
-    <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-slate-700/50" id="contact">
+    <section className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-12 border border-emerald-500/30" id="contact">
       <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
         Get in Touch
       </h2>
