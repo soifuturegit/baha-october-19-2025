@@ -10,35 +10,35 @@ interface ImageModalProps {
 }
 
 function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(true);
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/90 z-50 flex flex-col justify-center items-center p-4"
       onClick={onClose}
     >
-      <div 
+      <div
         className="relative max-w-6xl w-full max-h-[85vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image container */}
         <div className="relative flex-1 overflow-hidden">
-          <img 
-            src={image.fullImage} 
-            alt={image.title} 
+          <img
+            src={image.fullImage}
+            alt={image.title}
             className="w-full h-full object-contain"
           />
-          
+
           {/* Controls container */}
           <div className="absolute inset-0 flex items-center justify-between p-4">
-            <button 
+            <button
               onClick={(e) => { e.stopPropagation(); onPrev(); }}
               className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            <button 
+            <button
               onClick={(e) => { e.stopPropagation(); onNext(); }}
               className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
               aria-label="Next image"
@@ -46,17 +46,17 @@ function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
-          
+
           {/* Top controls */}
           <div className="absolute top-4 right-4 flex gap-2">
-            <button 
+            <button
               onClick={() => setShowInfo(!showInfo)}
               className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
-              aria-label="Image information"
+              aria-label="Toggle image information"
             >
               <Info className="w-5 h-5" />
             </button>
-            <a 
+            <a
               href={image.fullImage}
               target="_blank"
               rel="noopener noreferrer"
@@ -66,7 +66,7 @@ function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
             >
               <ExternalLink className="w-5 h-5" />
             </a>
-            <button 
+            <button
               onClick={onClose}
               className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
               aria-label="Close"
@@ -74,8 +74,8 @@ function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
               <X className="w-5 h-5" />
             </button>
           </div>
-          
-          {/* Image info */}
+
+          {/* Image info - shown by default */}
           {showInfo && (
             <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-4 backdrop-blur-sm">
               <h3 className="text-xl font-semibold mb-2">{image.title}</h3>
