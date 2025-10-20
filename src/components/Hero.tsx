@@ -16,7 +16,7 @@ export default function Hero() {
                 <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-center sm:text-left">
                   Hey, I'm {personalInfo.name}
                 </h1>
-                <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-left">
+                <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-justify hyphens-auto" lang="en">
                   {personalInfo.bio}
                 </p>
                 <div className="flex gap-6 justify-center sm:justify-start pt-2">
