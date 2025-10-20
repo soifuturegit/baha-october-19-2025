@@ -32,20 +32,24 @@ export default function Navbar() {
     });
 
     if (activeIndex !== -1) {
-      const activeButton = mobileNavRef.current.children[activeIndex] as HTMLElement;
-      if (activeButton) {
-        const navContainer = mobileNavRef.current;
-        const buttonLeft = activeButton.offsetLeft;
-        const buttonWidth = activeButton.offsetWidth;
-        const containerWidth = navContainer.offsetWidth;
+      const timer = setTimeout(() => {
+        const activeButton = mobileNavRef.current?.children[activeIndex] as HTMLElement;
+        if (activeButton && mobileNavRef.current) {
+          const navContainer = mobileNavRef.current;
+          const buttonLeft = activeButton.offsetLeft;
+          const buttonWidth = activeButton.offsetWidth;
+          const containerWidth = navContainer.offsetWidth;
 
-        const scrollPosition = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
+          const scrollPosition = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
 
-        navContainer.scrollTo({
-          left: Math.max(0, scrollPosition),
-          behavior: 'smooth'
-        });
-      }
+          navContainer.scrollTo({
+            left: Math.max(0, scrollPosition),
+            behavior: 'smooth'
+          });
+        }
+      }, 150);
+
+      return () => clearTimeout(timer);
     }
   }, [activeSection, navItems]);
 
