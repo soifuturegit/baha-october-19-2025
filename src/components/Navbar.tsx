@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, Menu, X, GraduationCap, ChevronRight, Image, Building2 } from 'lucide-react';
+import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, Menu, X, GraduationCap, ChevronRight, Image, Building2, MessageSquare, FileText } from 'lucide-react';
 import { useActiveSection } from '../hooks/useActiveSection';
 
 export default function Navbar() {
@@ -14,9 +14,11 @@ export default function Navbar() {
     { label: 'Projects', href: '#projects', icon: FolderGit2 },
     { label: 'Gallery', href: '#gallery', icon: Image },
     { label: 'Companies', href: '#companies', icon: Building2 },
+    { label: 'Founder Feedback', href: '#founder-feedback', icon: MessageSquare },
+    { label: 'References', href: '#references', icon: FileText },
     { label: 'Impact & Volunteering', href: '#impact', icon: HandHeart },
     { label: 'Achievements', href: '#achievements', icon: Trophy },
-    { label: 'Interests', href: '#interests', icon: Heart },
+    { label: 'Skills & Interests', href: '#skills-interests', icon: Heart },
     { label: 'Contact', href: '#contact', icon: Mail },
   ];
 
