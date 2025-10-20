@@ -237,7 +237,7 @@ export default function Projects() {
                 {project.description.length > 100 && (
                   <button
                     onClick={() => toggleDescription(index)}
-                    className="text-emerald-400 hover:text-emerald-300 text-xs font-medium mt-2 transition-colors"
+                    className="text-neutral-400 hover:text-neutral-300 text-xs font-medium mt-2 transition-colors"
                   >
                     {expandedCards.has(index) ? 'Read less' : 'Read more'}
                   </button>
