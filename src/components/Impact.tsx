@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 import { volunteerExperiences } from '../data';
 
 export default function Impact() {
@@ -59,11 +59,6 @@ export default function Impact() {
                     className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/95 backdrop-blur-sm flex items-center justify-center">
-                      <Users className="w-6 h-6 text-emerald-500" />
-                    </div>
-                  </div>
                 </div>
 
                 <div className="p-6">
