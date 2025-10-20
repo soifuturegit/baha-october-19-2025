@@ -42,12 +42,12 @@ export default function Navbar() {
         const scrollPosition = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
 
         navContainer.scrollTo({
-          left: scrollPosition,
+          left: Math.max(0, scrollPosition),
           behavior: 'smooth'
         });
       }
     }
-  }, [activeSection]);
+  }, [activeSection, navItems]);
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function Navbar() {
           </div>
 
           {/* Scrollable nav items */}
-          <div ref={mobileNavRef} className="flex gap-2 p-3 min-w-max overflow-x-auto hide-scrollbar">
+          <div ref={mobileNavRef} className="flex gap-2 p-3 overflow-x-auto hide-scrollbar" style={{ scrollBehavior: 'smooth' }}>
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = item.href === '/'
@@ -85,7 +85,7 @@ export default function Navbar() {
                 href={item.href.startsWith('#') ? item.href : undefined}
                 onClick={handleClick}
                 className={`
-                  flex flex-col items-center gap-1 px-4 py-2 rounded-xl min-w-[80px] transition-all duration-300
+                  flex flex-col items-center gap-1 px-4 py-2 rounded-xl min-w-[80px] flex-shrink-0 transition-all duration-300
                   ${isActive ? 'bg-emerald-500/20 border border-emerald-500/30' : 'hover:bg-neutral-900'}
                 `}
               >
