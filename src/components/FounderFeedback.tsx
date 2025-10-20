@@ -38,7 +38,7 @@ export default function FounderFeedback() {
         `}
       >
         <div className="p-6 sm:p-8 lg:p-12 pt-0 space-y-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {founderFeedback.map((item) => (
           <div
             key={item.id}
