@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { galleryImages } from '../data';
-import { Image, ChevronLeft, ChevronRight, X, Info, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { Image, ChevronLeft, ChevronRight, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ImageModalProps {
   image: typeof galleryImages[0];
@@ -10,8 +10,6 @@ interface ImageModalProps {
 }
 
 function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
-  const [showInfo, setShowInfo] = useState(true);
-
   return (
     <div
       className="fixed inset-0 bg-black/90 z-50 flex flex-col justify-center items-center p-4"
@@ -50,23 +48,6 @@ function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
           {/* Top controls */}
           <div className="absolute top-4 right-4 flex gap-2">
             <button
-              onClick={() => setShowInfo(!showInfo)}
-              className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
-              aria-label="Toggle image information"
-            >
-              <Info className="w-5 h-5" />
-            </button>
-            <a
-              href={image.fullImage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
-              onClick={(e) => e.stopPropagation()}
-              aria-label="Open in new tab"
-            >
-              <ExternalLink className="w-5 h-5" />
-            </a>
-            <button
               onClick={onClose}
               className="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
               aria-label="Close"
@@ -75,13 +56,11 @@ function ImageModal({ image, onClose, onPrev, onNext }: ImageModalProps) {
             </button>
           </div>
 
-          {/* Image info - shown by default */}
-          {showInfo && (
-            <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-4 backdrop-blur-sm">
-              <h3 className="text-xl font-semibold mb-2">{image.title}</h3>
-              <p className="text-slate-300">{image.description}</p>
-            </div>
-          )}
+          {/* Image info - always shown */}
+          <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-4 backdrop-blur-sm">
+            <h3 className="text-xl font-semibold mb-2">{image.title}</h3>
+            <p className="text-slate-300">{image.description}</p>
+          </div>
         </div>
       </div>
     </div>
