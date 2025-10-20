@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { founderFeedback } from '../data/founder-feedback';
+import { useSectionContext } from '../context/SectionContext';
 
 export default function FounderFeedback() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { openSection, setOpenSection } = useSectionContext();
+  const isOpen = openSection === 'founder-feedback';
 
   return (
     <section
@@ -11,7 +13,7 @@ export default function FounderFeedback() {
       id="founder-feedback"
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setOpenSection(isOpen ? null : 'founder-feedback')}
         className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
       >
         <div className="flex-1">

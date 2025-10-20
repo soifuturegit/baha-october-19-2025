@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Users, Calendar, ExternalLink, ChevronDown, ChevronUp, Trophy } from 'lucide-react';
 import { volunteerExperiences } from '../data';
+import { useSectionContext } from '../context/SectionContext';
 
 export default function Impact() {
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const { openSection, setOpenSection } = useSectionContext();
+  const isOpen = openSection === 'impact';
 
   const toggleExpand = (index: number) => {
     setExpandedIds(prev => {
@@ -19,7 +21,7 @@ export default function Impact() {
   return (
     <section className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden" id="impact">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setOpenSection(isOpen ? null : 'impact')}
         className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
       >
         <div className="flex-1">
