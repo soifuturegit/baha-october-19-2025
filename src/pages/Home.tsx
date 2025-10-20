@@ -11,11 +11,8 @@ import Gallery from '../components/Gallery';
 import Companies from '../components/Companies';
 import FounderFeedback from '../components/FounderFeedback';
 import References from '../components/References';
-import { useScrollSectionDetect } from '../hooks/useScrollSectionDetect';
 
 export default function Home() {
-  useScrollSectionDetect();
-
   return (
     <div className="space-y-8 w-full overflow-hidden">
       <Hero />

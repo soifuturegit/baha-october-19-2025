@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { skills, interests } from '../data/skills';
-import { useSectionContext } from '../context/SectionContext';
 
 export default function SkillsAndInterests() {
-  const { openSection, setOpenSection } = useSectionContext();
-  const isOpen = openSection === 'skills-interests';
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <section
@@ -13,7 +11,7 @@ export default function SkillsAndInterests() {
       id="skills-interests"
     >
       <button
-        onClick={() => setOpenSection(isOpen ? null : 'skills-interests')}
+        onClick={() => setIsOpen(!isOpen)}
         className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
       >
         <div className="flex-1">

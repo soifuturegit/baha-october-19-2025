@@ -1,14 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { companies } from '../data/companies';
 import { ArrowUpRight, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
-import { useSectionContext } from '../context/SectionContext';
 
 export default function Companies() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const animationRef = useRef<number | null>(null);
-  const { openSection, setOpenSection } = useSectionContext();
-  const isOpen = openSection === 'companies';
+  const [isOpen, setIsOpen] = useState(false);
   const scrollAmount = 1; // Pixels to scroll per frame
   
   const handleScroll = (direction: 'left' | 'right') => {
@@ -56,7 +54,7 @@ export default function Companies() {
       id="companies"
     >
       <button
-        onClick={() => setOpenSection(isOpen ? null : 'companies')}
+        onClick={() => setIsOpen(!isOpen)}
         className="w-full p-6 sm:p-8 lg:p-12 flex items-start justify-between group text-left hover:bg-slate-800/30 transition-all duration-300"
       >
         <div className="flex-1">
