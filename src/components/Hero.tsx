@@ -12,11 +12,11 @@ export default function Hero() {
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-emerald-500/30">
           <div className="p-6 sm:p-8 lg:p-12">
             <div className="flex flex-col-reverse sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
-              <div className="flex-1 space-y-4 sm:space-y-6 text-center sm:text-left">
-                <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              <div className="flex-1 space-y-4 sm:space-y-6">
+                <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-center sm:text-left">
                   Hey, I'm {personalInfo.name}
                 </h1>
-                <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-left">
                   {personalInfo.bio}
                 </p>
                 <div className="flex gap-6 justify-center sm:justify-start pt-2">
