@@ -87,7 +87,7 @@ export default function Hero() {
             </div>
 
             <div className="space-y-4 text-sm sm:text-base text-slate-400 leading-relaxed">
-              <p>I believe opportunity should never be limited by circumstance. Growing up, I saw how a lack of resources held people back—including my own family. But I also learned that with the right tools, anyone can change their future. That's what drives me—using technology, entrepreneurship, and education to break barriers and create opportunities. Whether it's building platforms, mentoring students, or launching new ideas, I'm always looking for ways to make an impact and help others move forward.</p>
+              <p className="text-justify hyphens-auto" lang="en">I believe opportunity should never be limited by circumstance. Growing up, I saw how a lack of resources held people back—including my own family. But I also learned that with the right tools, anyone can change their future. That's what drives me—using technology, entrepreneurship, and education to break barriers and create opportunities. Whether it's building platforms, mentoring students, or launching new ideas, I'm always looking for ways to make an impact and help others move forward.</p>
             </div>
 
           </div>
