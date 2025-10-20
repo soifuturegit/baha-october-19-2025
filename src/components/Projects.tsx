@@ -78,6 +78,7 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(true);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'all') {
@@ -95,6 +96,23 @@ export default function Projects() {
         behavior: 'smooth'
       });
     }
+  };
+
+  const toggleDescription = (index: number) => {
+    setExpandedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
+  const truncateText = (text: string, maxLength: number = 100) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + '...';
   };
 
   return (
@@ -210,9 +228,21 @@ export default function Projects() {
                 {project.title}
               </h3>
 
-              <p className="text-neutral-400 text-[14px] leading-relaxed mb-4 flex-1">
-                {project.description}
-              </p>
+              <div className="mb-4 flex-1">
+                <p className="text-neutral-400 text-[14px] leading-relaxed">
+                  {expandedCards.has(index)
+                    ? project.description
+                    : truncateText(project.description, 100)}
+                </p>
+                {project.description.length > 100 && (
+                  <button
+                    onClick={() => toggleDescription(index)}
+                    className="text-emerald-400 hover:text-emerald-300 text-xs font-medium mt-2 transition-colors"
+                  >
+                    {expandedCards.has(index) ? 'Read less' : 'Read more'}
+                  </button>
+                )}
+              </div>
 
               {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-4">
