@@ -10,13 +10,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-lg font-semibold mb-3">Email</h3>
             <p className="text-slate-400 text-sm mb-4">
-              Please replace (doooot) with .
+              Please replace (dot) with .
             </p>
             <a
               href={`mailto:${personalInfo.contact.email}`}
               className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium"
             >
-              {personalInfo.contact.email.replace('@', ' (doooot) ')}
+              {personalInfo.contact.email.replace('@', ' (dot) ')}
             </a>
           </div>
 
