@@ -14,7 +14,7 @@ export default function Hero() {
             <div className="flex flex-col-reverse sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
               <div className="flex-1 space-y-4 sm:space-y-6">
                 <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-center sm:text-left">
-                  Hey, I'm {personalInfo.name}
+                  {personalInfo.name}
                 </h1>
                 <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-justify hyphens-auto" lang="en">
                   {personalInfo.bio}
