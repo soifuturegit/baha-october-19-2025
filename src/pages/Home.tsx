@@ -11,6 +11,7 @@ import Gallery from '../components/Gallery';
 import Companies from '../components/Companies';
 import FounderFeedback from '../components/FounderFeedback';
 import References from '../components/References';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <Achievements />
       <SkillsAndInterests />
       <Contact />
+      <Footer />
     </div>
   );
 }
