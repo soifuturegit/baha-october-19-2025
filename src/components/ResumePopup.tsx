@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { X } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface ResumePopupProps {
   isOpen: boolean;
@@ -7,20 +8,30 @@ interface ResumePopupProps {
 }
 
 export default function ResumePopup({ isOpen, onClose }: ResumePopupProps) {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    setTimeout(() => {
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       setIsSubmitting(false);
       setIsSubmitted(true);
 
@@ -29,7 +40,11 @@ export default function ResumePopup({ isOpen, onClose }: ResumePopupProps) {
         setIsSubmitted(false);
         setFormData({ name: '', email: '' });
       }, 2000);
-    }, 1000);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError('Failed to send request. Please try again.');
+      console.error('EmailJS Error:', err);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +84,13 @@ export default function ResumePopup({ isOpen, onClose }: ResumePopupProps) {
               <p className="text-slate-400 text-sm mt-2">I'll send you my resume within a day.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+              {error && (
+                <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
+                  <p className="text-red-400 text-sm">{error}</p>
+                </div>
+              )}
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                   Name
@@ -77,7 +98,7 @@ export default function ResumePopup({ isOpen, onClose }: ResumePopupProps) {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="user_name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -93,7 +114,7 @@ export default function ResumePopup({ isOpen, onClose }: ResumePopupProps) {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="user_email"
                   value={formData.email}
                   onChange={handleChange}
                   required
