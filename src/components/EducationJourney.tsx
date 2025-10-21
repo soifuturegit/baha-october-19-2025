@@ -92,49 +92,49 @@ export default function EducationJourney() {
           ${isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}
         `}
       >
-        <div className="p-6 sm:p-8 lg:p-12 pt-0 space-y-12">
+        <div className="p-4 sm:p-6 lg:p-12 pt-0 space-y-8 sm:space-y-12">
           <div className="relative">
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {timeline.map((item, index) => {
                 return (
-                  <div key={index} className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/5">
-                    <div className="flex flex-wrap items-baseline gap-2 mb-2">
-                      <h4 className="text-lg font-semibold text-white">{item.title}</h4>
-                      <span className="text-emerald-400 text-sm">({item.period})</span>
+                  <div key={index} className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/5">
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-baseline gap-1 sm:gap-2 mb-2">
+                      <h4 className="text-base sm:text-lg font-semibold text-white">{item.title}</h4>
+                      <span className="text-emerald-400 text-xs sm:text-sm">({item.period})</span>
                     </div>
-                    <p className="text-sm text-slate-400 mb-2">{item.institution}</p>
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed">{item.description}</p>
+                    <p className="text-xs sm:text-sm text-slate-400 mb-2">{item.institution}</p>
+                    <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-relaxed">{item.description}</p>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className="pt-8 border-t border-slate-700/50">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8">Courses & Certifications</h3>
+          <div className="pt-6 sm:pt-8 border-t border-slate-700/50">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6 sm:mb-8">Courses & Certifications</h3>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
               {Object.entries(coursesData).map(([category, courses], catIndex) => (
                 <div
                   key={catIndex}
-                  className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/5"
+                  className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/5"
                 >
-                  <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <div className="w-1 h-6 bg-gradient-to-b from-emerald-400 to-teal-400 rounded-full"></div>
+                  <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                    <div className="w-1 h-5 sm:h-6 bg-gradient-to-b from-emerald-400 to-teal-400 rounded-full"></div>
                     {category}
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2.5 sm:space-y-3">
                     {courses.map((course, courseIndex) => (
                       <li key={courseIndex} className="group/course">
-                        <div className="flex items-start gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-200">
-                          <div className="mt-2 w-1.5 h-1.5 bg-slate-500 rounded-full flex-shrink-0 group-hover/course:scale-150 transition-transform duration-200" />
+                        <div className="flex items-start gap-2 sm:gap-3 text-slate-400 hover:text-slate-200 transition-colors duration-200">
+                          <div className="mt-1.5 sm:mt-2 w-1.5 h-1.5 bg-slate-500 rounded-full flex-shrink-0 group-hover/course:scale-150 transition-transform duration-200" />
                           <div className="flex-1">
-                            <span className="text-sm leading-relaxed block">
+                            <span className="text-xs sm:text-sm leading-relaxed block">
                               <span className="font-medium text-slate-300">{course.name}</span>
                               <span className="text-slate-500"> · </span>
                               <span className="text-slate-500">{course.provider}</span>
-                              <span className="text-emerald-400/70 ml-2 text-xs">({course.year})</span>
+                              <span className="text-emerald-400/70 ml-1 sm:ml-2 text-[10px] sm:text-xs">({course.year})</span>
                             </span>
                           </div>
                         </div>

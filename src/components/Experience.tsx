@@ -53,9 +53,9 @@ export default function Experience() {
               className="bg-neutral-950 rounded-2xl border border-neutral-800 overflow-hidden hover:border-neutral-700 transition-all duration-300"
             >
               {/* Header */}
-              <div className="p-6 pb-5">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <div className="p-4 sm:p-6 pb-4 sm:pb-5">
+                <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
                     <img
                       src={experience.logo}
                       alt={`${experience.company} logo`}
@@ -63,10 +63,10 @@ export default function Experience() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-white mb-1 leading-tight">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-1 leading-tight">
                       {experience.company}
                     </h3>
-                    <p className="text-emerald-400 text-[15px] font-medium mb-2">
+                    <p className="text-emerald-400 text-sm sm:text-[15px] font-medium mb-2">
                       {experience.title}
                     </p>
                     <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-500 uppercase tracking-wide">
@@ -80,13 +80,13 @@ export default function Experience() {
                 {/* Expand Button */}
                 <button
                   onClick={() => toggleExpand(index)}
-                  className="w-full flex items-center justify-between px-4 py-3 bg-neutral-900 hover:bg-neutral-800 rounded-lg transition-colors duration-200 group"
+                  className="w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-neutral-900 hover:bg-neutral-800 rounded-lg transition-colors duration-200 group"
                 >
-                  <span className="text-neutral-300 text-sm font-medium">
+                  <span className="text-neutral-300 text-xs sm:text-sm font-medium">
                     My Responsibilities {expandedIds.includes(index) ? '(Collapse)' : '(Expand)'}
                   </span>
                   <Plus
-                    className={`w-5 h-5 text-neutral-400 transition-transform duration-200 ${
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-neutral-400 transition-transform duration-200 ${
                       expandedIds.includes(index) ? 'rotate-45' : ''
                     }`}
                   />
@@ -95,24 +95,24 @@ export default function Experience() {
 
               {/* Expanded Content */}
               {expandedIds.includes(index) && (
-                <div className="px-6 pb-6 pt-0 border-t border-neutral-800">
-                  <div className="pt-5 space-y-5">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0 border-t border-neutral-800">
+                  <div className="pt-4 sm:pt-5 space-y-4 sm:space-y-5">
                     {/* Description */}
                     <div>
-                      <p className="text-neutral-300 text-[15px] leading-relaxed mb-4">
+                      <p className="text-neutral-300 text-sm sm:text-[15px] leading-relaxed mb-4">
                         {experience.description}
                       </p>
                     </div>
 
                     {/* Key Achievements */}
                     <div>
-                      <h4 className="text-white font-semibold mb-3 text-sm">
+                      <h4 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">
                         Key Achievements
                       </h4>
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2 sm:space-y-2.5">
                         {experience.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-3 text-neutral-400 text-[14px] leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
+                          <li key={i} className="flex items-start gap-2 sm:gap-3 text-neutral-400 text-xs sm:text-[14px] leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 mt-1.5 sm:mt-2 flex-shrink-0" />
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -121,14 +121,14 @@ export default function Experience() {
 
                     {/* Skills */}
                     <div>
-                      <h4 className="text-white font-semibold mb-3 text-sm">
+                      <h4 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">
                         Skills & Technologies
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {experience.skills.map((skill, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1.5 bg-neutral-900 text-neutral-300 rounded-lg text-xs border border-neutral-800 hover:border-emerald-500/30 hover:text-emerald-400 transition-colors"
+                            className="px-2 py-1 sm:px-3 sm:py-1.5 bg-neutral-900 text-neutral-300 rounded-lg text-[10px] sm:text-xs border border-neutral-800 hover:border-emerald-500/30 hover:text-emerald-400 transition-colors"
                           >
                             {skill}
                           </span>
