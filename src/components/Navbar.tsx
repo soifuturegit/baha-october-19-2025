@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Briefcase, FolderGit2, Trophy, Heart, HandHeart, Mail, GraduationCap, ChevronRight, Image, Building2, MessageSquare, FileText } from 'lucide-react';
 import { useActiveSection } from '../hooks/useActiveSection';
+import ResumePopup from './ResumePopup';
 
 export default function Navbar() {
   const activeSection = useActiveSection();
   const mobileNavRef = useRef<HTMLDivElement>(null);
+  const [isResumePopupOpen, setIsResumePopupOpen] = useState(false);
 
   const navItems = [
     { label: 'Home', href: '/', icon: Home },
@@ -51,6 +53,8 @@ export default function Navbar() {
 
   return (
     <>
+      <ResumePopup isOpen={isResumePopupOpen} onClose={() => setIsResumePopupOpen(false)} />
+
       {/* Mobile Bottom Navigation - Horizontal Scroll */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-neutral-950/95 backdrop-blur-sm border-t border-emerald-500/30 pb-safe">
         <div className="relative">
@@ -102,6 +106,15 @@ export default function Navbar() {
               </NavLink>
             );
           })}
+          <button
+            onClick={() => setIsResumePopupOpen(true)}
+            className="flex flex-col items-center gap-1 px-4 py-2 rounded-xl min-w-[80px] flex-shrink-0 transition-all duration-300 bg-emerald-500/20 border border-emerald-500/30 hover:bg-emerald-500/30"
+          >
+            <FileText className="w-5 h-5 text-emerald-400" />
+            <span className="text-xs font-medium whitespace-nowrap text-white">
+              Resume
+            </span>
+          </button>
           </div>
         </div>
       </nav>
@@ -185,11 +198,21 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="p-6 border-t border-emerald-500/30">
-          <p className="text-[15px] text-neutral-500 text-center">
-            © {new Date().getFullYear()} All rights reserved
-          </p>
+        {/* Resume Button & Footer */}
+        <div className="border-t border-emerald-500/30">
+          <div className="p-3 px-6">
+            <button
+              onClick={() => setIsResumePopupOpen(true)}
+              className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-xl transition-colors"
+            >
+              Resume
+            </button>
+          </div>
+          <div className="p-6 pt-3">
+            <p className="text-[15px] text-neutral-500 text-center">
+              © {new Date().getFullYear()} All rights reserved
+            </p>
+          </div>
         </div>
       </nav>
     </>

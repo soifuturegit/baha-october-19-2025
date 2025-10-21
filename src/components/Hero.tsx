@@ -19,7 +19,7 @@ export default function Hero() {
                 <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-justify hyphens-auto" lang="en">
                   {personalInfo.bio}
                 </p>
-                <div className="flex gap-6 justify-center sm:justify-start pt-2">
+                <div className="flex gap-4 justify-center sm:justify-start pt-2">
                   <a
                     href={personalInfo.contact.linkedin}
                     className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
@@ -30,13 +30,12 @@ export default function Hero() {
                     <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                   <a
-                    href={personalInfo.contact.X}
-                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
+                    href="https://calendly.com/bahauddin-chishte"
+                    className="px-6 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>X</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    Book a Meeting
                   </a>
                 </div>
               </div>
