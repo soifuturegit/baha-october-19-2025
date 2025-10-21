@@ -12,7 +12,7 @@ export interface PersonalInfo {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: 'Baha',
+  name: 'Bahauddin Chishte',
   role: 'Tech Entrepreneur',
   bio: "I'm an emerging tech entrepreneur who loves to solve problems using technology that makes people lives easier. Aside tech I'm actively working on SaaS, product, marketing and business development",
   images: [
