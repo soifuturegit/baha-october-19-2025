@@ -48,9 +48,10 @@ export default function ResumePopup({ isOpen, onClose }: ResumePopupProps) {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const fieldName = e.target.name === 'user_name' ? 'name' : 'email';
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [fieldName]: e.target.value,
     });
   };
 
