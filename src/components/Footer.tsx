@@ -25,10 +25,10 @@ export default function Footer() {
             <p className="text-slate-400 text-sm mb-4">
               Linkedin for fastest reply.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={personalInfo.contact.github}
-                className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+                className="flex items-center gap-2 hover:opacity-70 transition-opacity group"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -37,7 +37,7 @@ export default function Footer() {
               </a>
               <a
                 href={personalInfo.contact.linkedin}
-                className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+                className="flex items-center gap-2 hover:opacity-70 transition-opacity group"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -54,7 +54,7 @@ export default function Footer() {
             </p>
             <a
               href="https://calendly.com/bahauddin-chishte"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+              className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity group"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -19,10 +19,10 @@ export default function Hero() {
                 <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-justify hyphens-auto" lang="en">
                   {personalInfo.bio}
                 </p>
-                <div className="flex gap-3 justify-center sm:justify-start pt-2">
+                <div className="flex gap-4 justify-center sm:justify-start pt-2">
                   <a
                     href={personalInfo.contact.linkedin}
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+                    className="flex items-center gap-2 hover:opacity-70 transition-opacity group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -31,7 +31,7 @@ export default function Hero() {
                   </a>
                   <a
                     href={personalInfo.contact.github}
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+                    className="flex items-center gap-2 hover:opacity-70 transition-opacity group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -40,7 +40,7 @@ export default function Hero() {
                   </a>
                   <a
                     href="https://calendly.com/bahauddin-chishte"
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+                    className="flex items-center gap-2 hover:opacity-70 transition-opacity group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
