@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Linkedin, Github, Calendar } from 'lucide-react';
 import { personalInfo } from '../data/personal-info';
 import { useImageCarousel } from '../hooks/useImageCarousel';
 
@@ -19,24 +19,33 @@ export default function Hero() {
                 <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl text-justify hyphens-auto" lang="en">
                   {personalInfo.bio}
                 </p>
-                <div className="flex gap-6 justify-center sm:justify-start pt-2">
+                <div className="flex gap-3 justify-center sm:justify-start pt-2">
                   <a
                     href={personalInfo.contact.linkedin}
-                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
+                    className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>LinkedIn</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <Linkedin className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+                    <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">LinkedIn</span>
+                  </a>
+                  <a
+                    href={personalInfo.contact.github}
+                    className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+                    <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">GitHub</span>
                   </a>
                   <a
                     href="https://calendly.com/bahauddin-chishte"
-                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
+                    className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>Book a Meeting</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <Calendar className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+                    <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Appointment</span>
                   </a>
                 </div>
               </div>
