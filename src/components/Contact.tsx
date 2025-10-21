@@ -31,7 +31,7 @@ export default function Contact() {
           <div className="flex flex-col gap-3">
             <a
               href={personalInfo.contact.github}
-              className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+              className="flex items-center gap-2 px-4 py-2 hover:bg-slate-900/30 rounded-lg transition-all group"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ export default function Contact() {
             </a>
             <a
               href={personalInfo.contact.linkedin}
-              className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+              className="flex items-center gap-2 px-4 py-2 hover:bg-slate-900/30 rounded-lg transition-all group"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -57,7 +57,7 @@ export default function Contact() {
           </p>
           <a
             href="https://calendly.com/bahauddin-chishte"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+            className="inline-flex items-center gap-2 px-4 py-2 hover:bg-slate-900/30 rounded-lg transition-all group"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -75,7 +75,7 @@ export default function Contact() {
             href="https://www.upwork.com/freelancers/~010ac34abc2d2bd46c"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 hover:border-slate-600 rounded-lg transition-all group"
+            className="inline-flex items-center gap-2 px-4 py-2 hover:bg-slate-900/30 rounded-lg transition-all group"
           >
             <Briefcase className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
             <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Upwork Profile</span>
