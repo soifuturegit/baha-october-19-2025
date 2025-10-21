@@ -87,7 +87,6 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
   }
 
@@ -97,7 +96,6 @@
     font-weight: var(--font-weight-normal);
     background-color: hsl(var(--bg-secondary));
     color: hsl(var(--text-primary));
-    transition: all var(--transition-base);
     overflow-x: hidden;
   }
 

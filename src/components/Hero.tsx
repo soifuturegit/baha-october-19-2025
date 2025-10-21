@@ -62,7 +62,7 @@ export default function Hero() {
                   return (
                     <div
                       key={index}
-                      className={`absolute inset-0 rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer ${
+                      className={`absolute inset-0 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer ${
                         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
                       }`}
                       style={{
